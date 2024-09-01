@@ -39,42 +39,33 @@ const Navbar = () => {
 
       <nav className='w-full flex items-center justify-between py-4 px-4 md:px-8'>
         {/* Hamburger and Search (for mobile view) */}
-        <div className='md:hidden flex items-center justify-between w-full'>
-          <button onClick={toggleMenu} className='focus:outline-none'>
-            <FaBars className='text-black w-6 h-6' />
-          </button>
-          <div className='flex-grow flex justify-center'>
-            <div className='flex gap-2 px-2 bg-[#F5F5F5] items-center w-full max-w-xs'>
-              <input
-                type="text"
-                className='w-full py-1 bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:text-xs'
-                placeholder='Search'
-              />
-              <img
-                src="/navbar/icon_search.png"
-                className='cursor-pointer'
-                alt="Search Icon"
-              />
-            </div>
-          </div>
-          <div className='flex gap-4'>
-            <img
-              src="/navbar/icon_heart.png"
-              className='w-5 cursor-pointer'
-              alt="Wishlist Icon"
-            />
-            <img
-              src="/navbar/icon_cart.png"
-              className='w-6 cursor-pointer'
-              alt="Cart Icon"
-            />
-            <img
-              src="/navbar/icon_user.png"
-              className='w-6 cursor-pointer'
-              alt="User Icon"
-            />
-          </div>
-        </div>
+        <div className='md:hidden flex items-center justify-between w-full max-w-[500px] mx-auto'>
+  <div className='flex-grow flex items-center justify-start'>
+    <h1 className='font-bold text-2xl font-serif'>Exclusive</h1>
+  </div>
+  <div className='flex gap-3 items-center'>
+    <img
+      src="/navbar/icon_heart.png"
+      className='w-5 h-5 cursor-pointer'
+      alt="Wishlist Icon"
+    />
+    <img
+      src="/navbar/icon_cart.png"
+      className='w-6 h-6 cursor-pointer'
+      alt="Cart Icon"
+    />
+    <img
+      src="/navbar/icon_user.png"
+      className='w-6 h-6 cursor-pointer'
+      alt="User Icon"
+    />
+     <button onClick={toggleMenu} className='focus:outline-none'>
+    <FaBars className='text-black w-6 h-6' />
+  </button>
+  </div>
+ 
+</div>
+
 
         {/* Logo, Links, Search, and Icons (for larger screens) */}
         <div className='hidden md:flex items-center justify-evenly w-full'>
@@ -149,9 +140,21 @@ const Navbar = () => {
             >
               <FaTimes />
             </button>
-            <div className='flex-grow flex flex-col items-center justify-center'>
-            
-              <ul className='flex flex-col font-serif text-center gap-8'>
+            <h1 className='text-center text-3xl font-extrabold font-serif'>Exclusive</h1>
+            <div className='flex-grow flex flex-col gap-4 items-center justify-center'>
+            <div className='flex gap-2 px-2 bg-[#F5F5F5] items-center w-full max-w-s'>
+                <input
+                  type="text"
+                  className='w-full py-1 h-[50px] bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:text-xs'
+                  placeholder='Search'
+                />
+                <img
+                  src="/navbar/icon_search.png"
+                  className='cursor-pointer'
+                  alt="Search Icon"
+                />
+              </div>
+            <ul className='flex flex-col items-center gap-8'>
               <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/') ? 'border-b-2 border-black' : ''}`}>
                 <Link href="/" onClick={toggleMenu}>Home</Link>
               </li>
@@ -165,7 +168,6 @@ const Navbar = () => {
                 <Link href="/signup" onClick={toggleMenu}>Sign Up</Link>
               </li>
             </ul>
-          
             </div>
           </div>
         </motion.div>
