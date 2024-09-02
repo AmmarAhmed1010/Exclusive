@@ -1,15 +1,33 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Importing the hamburger and close icons
 import { motion } from 'framer-motion'; // Importing framer-motion for animations
 
 const Navbar = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage the dropdown visibility
+  const dropdownRef = useRef(null);
+
+  // Close the dropdown menu when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const isActive = (pathname) => router.pathname === pathname;
@@ -40,38 +58,67 @@ const Navbar = () => {
       <nav className='w-full flex items-center justify-between py-4 px-4 md:px-8'>
         {/* Hamburger and Search (for mobile view) */}
         <div className='md:hidden flex items-center justify-between w-full max-w-[500px] mx-auto'>
-  <div className='flex-grow flex items-center justify-start'>
-    <h1 className='font-bold text-2xl font-serif'>Exclusive</h1>
-  </div>
-  <div className='flex gap-3 items-center'>
-    <img
-      src="/navbar/icon_heart.png"
-      className='w-5 h-5 cursor-pointer'
-      alt="Wishlist Icon"
-    />
-    <img
-      src="/navbar/icon_cart.png"
-      className='w-6 h-6 cursor-pointer'
-      alt="Cart Icon"
-    />
-    <img
-      src="/navbar/icon_user.png"
-      className='w-6 h-6 cursor-pointer'
-      alt="User Icon"
-    />
-     <button onClick={toggleMenu} className='focus:outline-none'>
-    <FaBars className='text-black w-6 h-6' />
-  </button>
-  </div>
- 
-</div>
-
+          <div className='flex-grow flex items-center justify-start'>
+            <Link href="/">
+              <h1 className='font-bold text-2xl font-serif cursor-pointer'>Exclusive</h1>
+            </Link>
+          </div>
+          <div className='relative flex gap-3 items-center'>
+            <Link href="/wishlist">
+              <img
+                src="/navbar/icon_heart.png"
+                className='w-5 h-5 cursor-pointer'
+                alt="Wishlist Icon"
+              />
+            </Link>
+            <Link href="/cart">
+              <img
+                src="/navbar/icon_cart.png"
+                className='w-6 h-6 cursor-pointer'
+                alt="Cart Icon"
+              />
+            </Link>
+            <img
+              src="/navbar/icon_user.png"
+              className='w-6 h-6 cursor-pointer'
+              alt="User Icon"
+              onClick={toggleDropdown} // Toggle dropdown visibility on click
+            />
+            {/* User Dropdown */}
+            {isDropdownOpen && (
+              <div ref={dropdownRef} className='absolute right-0 flex flex-col gap-3 top-6 bg-black mt-2 w-56 shadow-lg rounded-lg p-4'>
+                <div className='flex items-center cursor-pointer gap-3'>
+                  <img src="/navbar/icon-user-white.png" className="w-[24px] h-[24px]" alt="" />
+                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Manage My Account</h1>
+                </div>
+                <div className='flex items-center cursor-pointer gap-3'>
+                  <img src="/navbar/icon-mallbag.png" className="w-[24px] h-[24px]" alt="" />
+                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Order</h1>
+                </div>
+                <div className='flex items-center cursor-pointer gap-3'>
+                  <img src="/navbar/icon-cancel.png" className="w-[24px] h-[24px]" alt="" />
+                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Cancellations</h1>
+                </div>
+                <div className='flex items-center cursor-pointer gap-3'>
+                  <img src="/navbar/icon-Reviews.png" className="w-[24px] h-[24px]" alt="" />
+                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Reviews</h1>
+                </div>
+                <div className='flex items-center cursor-pointer gap-3'>
+                  <img src="/navbar/icon-logout.png" className="w-[24px] h-[24px]" alt="" />
+                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Logout</h1>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
 
         {/* Logo, Links, Search, and Icons (for larger screens) */}
         <div className='hidden md:flex items-center justify-evenly w-full'>
-          <h1 className='text-[20px] md:text-[24px] font-bold text-black'>
-            Exclusive
-          </h1>
+          <Link href="/">
+            <h1 className='text-[20px] md:text-[24px] font-bold text-black cursor-pointer'>
+              Exclusive
+            </h1>
+          </Link>
 
           <div className='flex items-center gap-8'>
             <ul className='flex flex-row gap-8'>
@@ -104,31 +151,59 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className='flex items-center gap-4'>
-              <img
-                src="/navbar/icon_heart.png"
-                className='w-5 cursor-pointer'
-                alt="Wishlist Icon"
-              />
-              <img
-                src="/navbar/icon_cart.png"
-                className='w-6 cursor-pointer'
-                alt="Cart Icon"
-              />
+            <div className='relative flex items-center gap-4'>
+              <Link href="/wishlist">
+                <img
+                  src="/navbar/icon_heart.png"
+                  className='w-5 cursor-pointer'
+                  alt="Wishlist Icon"
+                />
+              </Link>
+              <Link href="/cart">
+                <img
+                  src="/navbar/icon_cart.png"
+                  className='w-6 cursor-pointer'
+                  alt="Cart Icon"
+                />
+              </Link>
               <img
                 src="/navbar/icon_user.png"
                 className='w-6 cursor-pointer'
                 alt="User Icon"
+                onClick={toggleDropdown} // Toggle dropdown visibility on click
               />
+              {/* User Dropdown for larger screens */}
+              {isDropdownOpen && (
+                <div ref={dropdownRef} className='absolute right-0 flex flex-col gap-3 top-6 bg-black mt-2 w-56 shadow-lg rounded-lg p-4'>
+                  <div className='flex items-center cursor-pointer gap-3'>
+                    <img src="/navbar/icon-user-white.png" className="w-[24px] h-[24px]" alt="" />
+                    <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Manage My Account</h1>
+                  </div>
+                  <div className='flex items-center cursor-pointer gap-3'>
+                    <img src="/navbar/icon-mallbag.png" className="w-[24px] h-[24px]" alt="" />
+                    <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Order</h1>
+                  </div>
+                  <div className='flex items-center cursor-pointer gap-3'>
+                    <img src="/navbar/icon-cancel.png" className="w-[24px] h-[24px]" alt="" />
+                    <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Cancellations</h1>
+                  </div>
+                  <div className='flex items-center cursor-pointer gap-3'>
+                    <img src="/navbar/icon-Reviews.png" className="w-[24px] h-[24px]" alt="" />
+                    <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Reviews</h1>
+                  </div>
+                  <div className='flex items-center cursor-pointer gap-3'>
+                    <img src="/navbar/icon-logout.png" className="w-[24px] h-[24px]" alt="" />
+                    <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Logout</h1>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         {/* Mobile Menu Pop-Up */}
         <motion.div
-          className={`fixed top-0 right-0 w-full h-full bg-white shadow-lg z-50 ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
-          } transition-transform duration-300 ease-in-out`}
+          className={`fixed top-0 right-0 w-full h-full bg-white shadow-lg z-50 ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}
           initial={{ translateX: '100%' }}
           animate={{ translateX: isOpen ? '0%' : '100%' }}
           exit={{ translateX: '100%' }}
@@ -142,7 +217,7 @@ const Navbar = () => {
             </button>
             <h1 className='text-center text-3xl font-extrabold font-serif'>Exclusive</h1>
             <div className='flex-grow flex flex-col gap-4 items-center justify-center'>
-            <div className='flex gap-2 px-2 bg-[#F5F5F5] items-center w-full max-w-s'>
+              <div className='flex gap-2 px-2 bg-[#F5F5F5] items-center w-full max-w-s'>
                 <input
                   type="text"
                   className='w-full py-1 h-[50px] bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:text-xs'
@@ -154,24 +229,26 @@ const Navbar = () => {
                   alt="Search Icon"
                 />
               </div>
-            <ul className='flex flex-col items-center gap-8'>
-              <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/" onClick={toggleMenu}>Home</Link>
-              </li>
-              <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/contact') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/contact" onClick={toggleMenu}>Contact</Link>
-              </li>
-              <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/about') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/about" onClick={toggleMenu}>About</Link>
-              </li>
-              <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/signup') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/signup" onClick={toggleMenu}>Sign Up</Link>
-              </li>
-            </ul>
+              <ul className='flex flex-col items-center gap-8'>
+                <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/') ? 'border-b-2 border-black' : ''}`}>
+                  <Link href="/" onClick={toggleMenu}>Home</Link>
+                </li>
+                <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/contact') ? 'border-b-2 border-black' : ''}`}>
+                  <Link href="/contact" onClick={toggleMenu}>Contact</Link>
+                </li>
+                <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/about') ? 'border-b-2 border-black' : ''}`}>
+                  <Link href="/about" onClick={toggleMenu}>About</Link>
+                </li>
+                <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/signup') ? 'border-b-2 border-black' : ''}`}>
+                  <Link href="/signup" onClick={toggleMenu}>Sign Up</Link>
+                </li>
+              </ul>
             </div>
           </div>
         </motion.div>
       </nav>
+
+      <hr className='border-black' />
     </div>
   );
 };
