@@ -4,7 +4,7 @@ import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Importin
 const About = () => {
   return (
     <>
-      <section className='w-full py-10 md:py-20 px-10 flex flex-col md:flex-row items-center justify-between gap-8'>
+      <section className='w-full py-10 md:py-20 px-6 flex flex-col md:flex-row items-center justify-between gap-8'>
         {/* left */}
         <div className='flex-1 md:w-[525px]'>
           <h1 className='text-4xl md:text-[54px] mb-6 md:mb-8 font-semibold'>Our Story</h1>
@@ -21,7 +21,7 @@ const About = () => {
         </div>
       </section>
 
-      <div className='w-full px-10 md:px-20 lg:px32'>
+      <div className='w-full px-6 md:px-20 lg:px32'>
         {/* section2 */}
         <div className='grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 py-10'>
           {[{ imgSrc: "/about/icon_shop.png", count: "10.5k", text: "Sellers active on our site" },

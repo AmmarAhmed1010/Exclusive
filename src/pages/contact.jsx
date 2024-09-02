@@ -2,7 +2,7 @@ import React from 'react'
 
 const contact = () => {
   return (
-    <div className="wrapper flex flex-col lg:flex-row gap-8 w-full justify-center py-14 px-4">
+    <div className="wrapper flex flex-col lg:flex-row gap-8 w-full justify-center py-14 px-6">
       {/* left */}
       <div className="w-full lg:w-[340px] h-auto lg:h-[457px] flex flex-col px-8 py-8 shadow-xl">
         <div className="flex mb-5 items-center gap-4">
