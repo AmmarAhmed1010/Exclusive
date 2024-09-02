@@ -76,16 +76,16 @@ const Navbar = () => {
           <div className='flex items-center gap-8'>
             <ul className='flex flex-row gap-8'>
               <li className={`text-[14px] md:text-[16px] pb-1 ${isActive('/') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/" onClick={toggleMenu}>Home</Link>
+                <Link href="/">Home</Link>
               </li>
               <li className={`text-[14px] md:text-[16px] pb-1 ${isActive('/contact') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/contact" onClick={toggleMenu}>Contact</Link>
+                <Link href="/contact">Contact</Link>
               </li>
               <li className={`text-[14px] md:text-[16px] pb-1 ${isActive('/about') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/about" onClick={toggleMenu}>About</Link>
+                <Link href="/about">About</Link>
               </li>
               <li className={`text-[14px] md:text-[16px] pb-1 ${isActive('/signup') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/signup" onClick={toggleMenu}>Sign Up</Link>
+                <Link href="/signup">Sign Up</Link>
               </li>
             </ul>
 
