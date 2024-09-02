@@ -10,17 +10,19 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage the dropdown visibility
   const dropdownRef = useRef(null); // Ref to the dropdown
-
+  const [isIconRed, setIsIconRed] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+    setIsIconRed(!isIconRed);
   };
 
   const closeDropdown = () => {
     setIsDropdownOpen(false);
+    setIsIconRed(false);
   };
 
   useEffect(() => {
@@ -82,12 +84,16 @@ const Navbar = () => {
               className='w-6 h-6 cursor-pointer'
               alt="Cart Icon"
             />
-            <img
-              src="/navbar/icon_user.png"
-              className='w-6 h-6 cursor-pointer'
-              alt="User Icon"
-              onClick={toggleDropdown} // Toggle dropdown visibility on click
-            />
+            <div
+              onClick={toggleDropdown}
+              className={`p-1 w-8 rounded-3xl cursor-pointer flex items-center justify-center ${isIconRed ? 'bg-[#DB4444] duration-200' : 'bg-white duration-200'
+                }`}
+            >
+              <CiUser
+                className={`w-6 h-6 ${isIconRed ? 'text-white' : 'text-black'
+                  }`}
+              />
+            </div>
             <button onClick={toggleMenu} className='focus:outline-none'>
               <FaBars className='text-black w-6 h-6' />
             </button>
@@ -95,9 +101,9 @@ const Navbar = () => {
             {isDropdownOpen && (
               <div
                 ref={dropdownRef}
-                className="absolute right-0 flex flex-col gap-3 top-6 bg-black mt-2 w-56 shadow-lg rounded-lg p-4"
+                className="absolute right-0 flex flex-col gap-3 top-8 bg-black mt-2 w-56 shadow-lg rounded-lg p-4"
               >
-                <div className="flex items-center cursor-pointer gap-3">
+                <div className="flex items-center cursor-pointer gap-3 ">
                   <CiUser style={{ color: "#FAFAFA" }} className="w-[24px] h-[24px]" />
                   <h1 className="text-[#FAFAFA] text-[14px] font-normal">Manage My Account</h1>
                 </div>
@@ -173,17 +179,21 @@ const Navbar = () => {
                 className='w-6 cursor-pointer'
                 alt="Cart Icon"
               />
-              <img
-                src="/navbar/icon_user.png"
-                className='w-6 cursor-pointer'
-                alt="User Icon"
-                onClick={toggleDropdown} // Toggle dropdown visibility on click
-              />
+              <div
+                onClick={toggleDropdown}
+                className={`p-1 w-8 rounded-3xl cursor-pointer flex items-center justify-center ${isIconRed ? 'bg-[#DB4444] duration-200' : 'bg-white duration-200'
+                  }`}
+              >
+                <CiUser
+                  className={`w-6 h-6 ${isIconRed ? 'text-white' : 'text-black'
+                    }`}
+                />
+              </div>
               {/* User Dropdown for larger screens */}
               {isDropdownOpen && (
                 <div
                   ref={dropdownRef}
-                  className="absolute right-0 flex flex-col gap-3 top-6 bg-black mt-2 w-56 shadow-lg rounded-lg p-4"
+                  className="absolute right-0 flex flex-col gap-3 top-8 bg-black mt-2 w-56 shadow-lg rounded-lg p-4"
                 >
                   <div className="flex items-center cursor-pointer gap-3">
                     <CiUser style={{ color: "#FAFAFA" }} className="w-[24px] h-[24px]" />

@@ -1,47 +1,86 @@
 import React from 'react';
+import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Importing Twitter, Instagram, and LinkedIn icons
 
 const About = () => {
   return (
-    <div className="wrapper flex flex-col lg:flex-row gap-8 w-full justify-center py-14 px-4">
-      {/* left */}
-      <div className="w-full lg:w-[340px] h-auto lg:h-[457px] flex flex-col px-8 py-8 shadow-xl">
-        <div className="flex mb-5 items-center gap-4">
-          <div className="h-[40px] w-[40px] rounded-3xl flex items-center justify-center bg-[#DB4444]">
-            <img src="/about/icon-phone.png" className="w-[20px] h-[20px]" />
-          </div>
-          <h1 className="text-[16px] font-medium">Call To Us</h1>
+    <>
+      <section className='w-full py-10 md:py-20 px-10 flex flex-col md:flex-row items-center justify-between gap-8'>
+        {/* left */}
+        <div className='flex-1 md:w-[525px]'>
+          <h1 className='text-4xl md:text-[54px] mb-6 md:mb-8 font-semibold'>Our Story</h1>
+          <p className='text-base md:text-[16px] leading-6 md:leading-[26px] mb-5'>
+            Launched in 2015, Exclusive is South Asias premier online shopping marketplace with an active presence in Bangladesh. Supported by a wide range of tailored marketing, data, and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the region.
+          </p>
+          <p className='text-base md:text-[16px] leading-6 md:leading-[26px]'>
+            Exclusive has more than 1 Million products to offer, growing very fast. Exclusive offers a diverse assortment in categories ranging from consumer.
+          </p>
         </div>
-        <h4 className="mb-2 text-[14px] font-normal">We are available 24/7, 7 days a week.</h4>
-        <h4 className="text-[14px] font-normal">Phone: +8801611112222</h4>
-        <hr className="my-8 border-none h-[1px] bg-black" />
-        <div className="flex mb-5 items-center gap-4">
-          <div className="h-[40px] w-[40px] rounded-3xl flex items-center justify-center bg-[#DB4444]">
-            <img src="/about/icon-email.png" className="w-[20px] h-[14px]" />
-          </div>
-          <h1 className="text-[16px] font-medium">Write To Us</h1>
+        {/* right */}
+        <div className='flex-1 md:w-[705px]'>
+          <img src="/about/section1.png" className="w-full h-auto" alt="About Section" />
         </div>
-        <p className="mb-3 text-[14px] font-normal">Fill out our form and we will contact you within 24 hours.</p>
-        <h4 className="mb-3 text-[14px] font-normal">Emails: customer@exclusive.com</h4>
-        <h4 className="text-[14px] font-normal">Emails: support@exclusive.com</h4>
+      </section>
+
+      <div className='w-full px-10 md:px-20 lg:px32'>
+        {/* section2 */}
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 py-10'>
+          {[{ imgSrc: "/about/icon_shop.png", count: "10.5k", text: "Sellers active on our site" },
+            { imgSrc: "/about/Icon-Shopping bag.png", count: "33k", text: "Monthly Product Sale" },
+            { imgSrc: "/about/Icon-Shopping bag.png", count: "45.5k", text: "Customers active on our site" },
+            { imgSrc: "/about/Icon-Moneybag.png", count: "25k", text: "Annual gross sale on our site" }]
+            .map((item, index) => (
+              <div key={index} className="border border-black py-6 px-4 flex flex-col items-center">
+                <div className="icon flex items-center justify-center w-[80px] h-[80px] bg-[#2F2E30] rounded-full">
+                  <div className='w-[58px] h-[58px] bg-black rounded-full flex items-center justify-center'>
+                    <img src={item.imgSrc} className='w-[40px] h-[40px]' alt="" />
+                  </div>
+                </div>
+                <h1 className='text-2xl mt-4 mb-2 font-bold'>{item.count}</h1>
+                <h4 className='text-center font-semibold'>{item.text}</h4>
+              </div>
+            ))}
+        </div>
+
+        {/* section3 */}
+        <div className='flex flex-col md:flex-row w-full gap-8 py-10'>
+          {[{ imgSrc: "/about/img1.png", name: "Tom Cruise", title: "Founder & Chairman" },
+            { imgSrc: "/about/img2.png", name: "Emma Watson", title: "Managing Director" },
+            { imgSrc: "/about/img3.png", name: "Will Smith", title: "Product Designer" }]
+            .map((item, index) => (
+              <div key={index} className='flex-1'>
+                <div className='bg-[#F5F5F5] h-[430px]'>
+                  <img src={item.imgSrc} className='w-full h-full object-contain' alt={item.name} />
+                </div>
+                <h1 className='text-2xl mt-5 mb-2 font-bold'>{item.name}</h1>
+                <h4 className='text-base mb-4'>{item.title}</h4>
+                <div className="icons flex gap-3">
+                  <FaTwitter className="w-6 h-6 cursor-pointer text-black" />
+                  <FaInstagram className="w-6 h-6 cursor-pointer text-black" />
+                  <FaLinkedin className="w-6 h-6 cursor-pointer text-black" />
+                </div>
+              </div>
+            ))}
+        </div>
+
+        {/* section4 */}
+        <div className='w-full px-4 md:px-20 py-10 flex flex-col md:flex-row justify-between gap-8'>
+          {[{ iconSrc: "/about/icon_shop.png", title: "FREE AND FAST DELIVERY", text: "Free delivery for all orders over $140" },
+            { iconSrc: "/about/Icon-Shopping bag.png", title: "24/7 CUSTOMER SERVICE", text: "Friendly 24/7 customer support" },
+            { iconSrc: "/about/Icon-Shopping bag.png", title: "MONEY BACK GUARANTEE", text: "We return money within 30 days" }]
+            .map((item, index) => (
+              <div key={index} className="flex-1 py-6 flex flex-col items-center text-center">
+                <div className="icon flex items-center justify-center w-[80px] h-[80px] bg-[#2F2E30] rounded-full">
+                  <div className='w-[58px] h-[58px] bg-black rounded-full flex items-center justify-center'>
+                    <img src={item.iconSrc} className='w-[40px] h-[40px]' alt="" />
+                  </div>
+                </div>
+                <h1 className='text-lg mt-5 mb-3 font-bold'>{item.title}</h1>
+                <h4 className='font-semibold'>{item.text}</h4>
+              </div>
+            ))}
+        </div>
       </div>
-      
-      {/* right */}
-      <div className="w-full lg:w-[800px] shadow-xl p-6 h-auto lg:h-[457px]">
-        <div className="w-full flex flex-col lg:flex-row gap-4 justify-between mb-4">
-          <input type="text" className="h-[50px] w-full lg:w-auto px-4 rounded-lg bg-[#F5F5F5]" placeholder="Your Name" />
-          <input type="text" className="h-[50px] w-full lg:w-auto px-4 rounded-lg bg-[#F5F5F5]" placeholder="Your Email" />
-          <input type="text" className="h-[50px] w-full lg:w-auto px-4 rounded-lg bg-[#F5F5F5]" placeholder="Your Phone" />
-        </div>
-        <div className="w-full mb-4">
-          <textarea className="h-[207px] w-full px-4 pt-4 rounded-lg bg-[#F5F5F5]" placeholder="Your Message"></textarea>
-        </div>
-        <div className="w-full flex justify-end">
-          <button className="bg-[#DB4444] px-[48px] py-[16px]">
-            <h3 className="text-[14px] text-white">Send Message</h3>
-          </button>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

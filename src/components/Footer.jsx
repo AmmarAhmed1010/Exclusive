@@ -13,14 +13,12 @@ const Footer = () => {
             <img src="/footer/icon-send.png" className="w-[24px] h-[24px]" alt="Send" />
           </div>
         </div>
-        
         <div className="flex flex-col gap-3">
           <h1 className="text-[#FAFAFA] text-[20px] font-medium">Support</h1>
           <h3 className="text-[14px] text-[#FAFAFA]">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</h3>
           <h3 className="text-[14px] text-[#FAFAFA]">exclusive@gmail.com</h3>
           <h3 className="text-[14px] text-[#FAFAFA]">+88015-88888-9999</h3>
         </div>
-        
         <div className="flex flex-col gap-3">
           <h1 className="text-[#FAFAFA] text-[20px] font-medium">Account</h1>
           <h3 className="text-[14px] text-[#FAFAFA]">My Account</h3>
@@ -29,7 +27,7 @@ const Footer = () => {
           <h3 className="text-[14px] text-[#FAFAFA]">Wishlist</h3>
           <h3 className="text-[14px] text-[#FAFAFA]">Shop</h3>
         </div>
-        
+
         <div className="flex flex-col gap-3">
           <h1 className="text-[#FAFAFA] text-[20px] font-medium">Quick Link</h1>
           <h3 className="text-[14px] text-[#FAFAFA]">Privacy Policy</h3>
@@ -37,7 +35,7 @@ const Footer = () => {
           <h3 className="text-[14px] text-[#FAFAFA]">FAQ</h3>
           <h3 className="text-[14px] text-[#FAFAFA]">Contact</h3>
         </div>
-        
+
         <div className="flex flex-col gap-3">
           <h1 className="text-[#FAFAFA] text-[20px] font-medium">Download App</h1>
           <h3 className="text-[14px] text-gray-400">Save $3 with App New User Only</h3>
