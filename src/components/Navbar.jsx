@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useState,useRef,useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'; // Importing the hamburger and close icons
 import { motion } from 'framer-motion'; // Importing framer-motion for animations
 
@@ -8,6 +8,7 @@ const Navbar = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage the dropdown visibility
+  const dropdownRef = useRef(null); // Ref to the dropdown
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,6 +17,24 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeDropdown();
+      }
+    };
+
+    // Add event listener to detect clicks outside the dropdown
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const isActive = (pathname) => router.pathname === pathname;
 
@@ -50,6 +69,7 @@ const Navbar = () => {
               <h1 className='font-bold text-2xl font-serif cursor-pointer'>Exclusive</h1>
             </Link>
           </div>
+
           <div className='relative flex gap-3 items-center'>
             <img
               src="/navbar/icon_heart.png"
@@ -72,7 +92,7 @@ const Navbar = () => {
             </button>
             {/* User Dropdown */}
             {isDropdownOpen && (
-               <div className='absolute right-0 flex flex-col gap-3 top-6 bg-black mt-2 w-56 shadow-lg rounded-lg p-4'>
+               <div ref={dropdownRef} className='absolute right-0 flex flex-col gap-3 top-6 bg-black mt-2 w-56 shadow-lg rounded-lg p-4'>
                <div className='flex items-center cursor-pointer gap-3'>
                <img src="/navbar/icon-user-white.png" className="w-[24px] h-[24px]" alt="" />
                <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Manage My Account</h1>
@@ -155,30 +175,30 @@ const Navbar = () => {
                 onClick={toggleDropdown} // Toggle dropdown visibility on click
               />
               {/* User Dropdown for larger screens */}
-              {isDropdownOpen && (
-                <div className='absolute right-0 flex flex-col gap-3 top-6 bg-black mt-2 w-56 shadow-lg rounded-lg p-4'>
-                  <div className='flex items-center cursor-pointer gap-3'>
-                  <img src="/navbar/icon-user-white.png" className="w-[24px] h-[24px]" alt="" />
-                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Manage My Account</h1>
-                  </div>
-                  <div className='flex items-center cursor-pointer gap-3'>
-                  <img src="/navbar/icon-mallbag.png" className="w-[24px] h-[24px]" alt="" />
-                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Order</h1>
-                  </div>
-                  <div className='flex items-center cursor-pointer gap-3'>
-                  <img src="/navbar/icon-cancel.png" className="w-[24px] h-[24px]" alt="" />
-                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Cancellations</h1>
-                  </div>
-                  <div className='flex items-center cursor-pointer gap-3'>
-                  <img src="/navbar/icon-Reviews.png" className="w-[24px] h-[24px]" alt="" />
-                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Reviews</h1>
-                  </div>
-                  <div className='flex items-center cursor-pointer gap-3'>
-                  <img src="/navbar/icon-logout.png" className="w-[24px] h-[24px]" alt="" />
-                  <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Logout</h1>
-                  </div>
-                </div>
-              )}
+               {isDropdownOpen && (
+               <div ref={dropdownRef} className='absolute right-0 flex flex-col gap-3 top-6 bg-black mt-2 w-56 shadow-lg rounded-lg p-4'>
+               <div className='flex items-center cursor-pointer gap-3'>
+               <img src="/navbar/icon-user-white.png" className="w-[24px] h-[24px]" alt="" />
+               <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Manage My Account</h1>
+               </div>
+               <div className='flex items-center cursor-pointer gap-3'>
+               <img src="/navbar/icon-mallbag.png" className="w-[24px] h-[24px]" alt="" />
+               <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Order</h1>
+               </div>
+               <div className='flex items-center cursor-pointer gap-3'>
+               <img src="/navbar/icon-cancel.png" className="w-[24px] h-[24px]" alt="" />
+               <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Cancellations</h1>
+               </div>
+               <div className='flex items-center cursor-pointer gap-3'>
+               <img src="/navbar/icon-Reviews.png" className="w-[24px] h-[24px]" alt="" />
+               <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Reviews</h1>
+               </div>
+               <div className='flex items-center cursor-pointer gap-3'>
+               <img src="/navbar/icon-logout.png" className="w-[24px] h-[24px]" alt="" />
+               <h1 className='text-[#FAFAFA] text-[14px] font-normal'>Logout</h1>
+               </div>
+             </div>
+            )}
             </div>
           </div>
         </div>
