@@ -215,7 +215,7 @@ const Navbar = () => {
         {/* Mobile Menu Pop-Up */}
         <motion.div
           className={`fixed top-0 right-0 w-full h-full bg-white shadow-lg z-50 ${isOpen ? 'translate-x-0' : 'translate-x-full'
-            } transition-transform duration-300 ease-in-out`}
+            } transition-transform duration-150 ease-in-out`}
           initial={{ translateX: '100%' }}
           animate={{ translateX: isOpen ? '0%' : '100%' }}
           exit={{ translateX: '100%' }}
