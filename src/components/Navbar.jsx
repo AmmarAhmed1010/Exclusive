@@ -106,7 +106,7 @@ const Navbar = () => {
                <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Cancellations</h1>
                </div>
                <div className='flex items-center cursor-pointer gap-3'>
-               <img src="/navbar/icon-Reviews.png" className="w-[24px] h-[24px]" alt="" />
+               <img src="/navbar/icon-reviews.png" className="w-[24px] h-[24px]" alt="" />
                <h1 className='text-[#FAFAFA] text-[14px] font-normal'>My Reviews</h1>
                </div>
                <div className='flex items-center cursor-pointer gap-3'>
