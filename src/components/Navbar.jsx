@@ -79,11 +79,13 @@ const Navbar = () => {
               className='w-5 h-5 cursor-pointer'
               alt="Wishlist Icon"
             />
-            <img
-              src="/navbar/icon_cart.png"
-              className='w-6 h-6 cursor-pointer'
-              alt="Cart Icon"
-            />
+            <Link href="/cart" >
+              <img
+                src="/navbar/icon_cart.png"
+                className='w-6 h-6 cursor-pointer'
+                alt="Cart Icon"
+              />
+            </Link>
             <div
               onClick={toggleDropdown}
               className={`p-1 w-8 rounded-3xl cursor-pointer flex items-center justify-center ${isIconRed ? 'bg-[#DB4444] duration-200' : 'bg-white duration-200'
@@ -174,11 +176,14 @@ const Navbar = () => {
                 className='w-5 cursor-pointer'
                 alt="Wishlist Icon"
               />
-              <img
-                src="/navbar/icon_cart.png"
-                className='w-6 cursor-pointer'
-                alt="Cart Icon"
-              />
+              <Link href="/cart" >
+                <img
+                  src="/navbar/icon_cart.png"
+                  className='w-6 cursor-pointer'
+                  alt="Cart Icon"
+                />
+              </Link>
+
               <div
                 onClick={toggleDropdown}
                 className={`p-1 w-8 rounded-3xl cursor-pointer flex items-center justify-center ${isIconRed ? 'bg-[#DB4444] duration-200' : 'bg-white duration-200'
