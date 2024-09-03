@@ -103,7 +103,7 @@ const Navbar = () => {
             {isDropdownOpen && (
               <div
                 ref={dropdownRef}
-                className="absolute right-0 flex flex-col gap-3 top-8 bg-black mt-2 w-56 shadow-lg rounded-lg p-4"
+                className="absolute z-50 right-0 flex flex-col gap-3 top-8 bg-black mt-2 w-56 shadow-lg rounded-lg p-4"
               >
                 <div className="flex items-center cursor-pointer gap-3 ">
                   <CiUser style={{ color: "#FAFAFA" }} className="w-[24px] h-[24px]" />
