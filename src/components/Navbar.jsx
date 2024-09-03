@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      <nav className='w-full flex items-center justify-between py-4 px-4 md:px-8'>
+      <nav className='w-full flex items-center justify-between border-b border-gray-300 py-6 px-4 md:px-8'>
         {/* Hamburger and Search (for mobile view) */}
         <div className='md:hidden flex items-center justify-between w-full max-w-[500px] mx-auto'>
           <div className='flex-grow flex items-center justify-start'>
