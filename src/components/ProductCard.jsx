@@ -3,7 +3,7 @@ import React from 'react';
 const ProductCard = ({ image, title, price, originalPrice, rating, reviews }) => {
   return (
     <div className='h-[350px] w-full'>
-      <div className='w-full h-[250px] flex justify-center items-center bg-[#F5F5F5]'>
+      <div className='w-full md:h-[250px] flex justify-center items-center bg-[#F5F5F5]'>
         <img src={image} className='w-[140px] h-[146px]' alt={title} />
       </div>
       <h1 className='text-black font-bold text-lg mt-4 mb-2'>{title}</h1>

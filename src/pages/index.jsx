@@ -329,27 +329,27 @@ const Index = () => {
             </div>
           </div>
           <div className='w-full grid grid-cols-2 justify-center items-center gap-8'>
-            <div className='flex flex-col  w-[170px] py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
+            <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaMobileAlt className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Phones</h3>
             </div>
-            <div className='flex flex-col w-[170px] py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
+            <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaLaptop className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Computers</h3>
             </div>
-            <div className='flex flex-col w-[170px] py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
+            <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaCamera className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Camera</h3>
             </div>
-            <div className='flex flex-col w-[170px] py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
+            <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaHeadphones className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Headphones</h3>
             </div>
-            <div className='flex flex-col w-[170px] py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
+            <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaGamepad className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Gaming</h3>
             </div>
-            <div className='flex flex-col w-[170px] py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
+            <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaGamepad className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Gaming</h3>
             </div>
@@ -367,7 +367,7 @@ const Index = () => {
             <h1 className='text-[20px] font-bold mb-8'>Best Selling Products</h1>
             <div>
               <button className='bg-[#DB4444] rounded'>
-                <h4 className='text-white text-lg font-medium px-8 py-2'>View All</h4>
+                <h4 className='text-white text-sm font-medium px-6 py-2'>View All</h4>
               </button>
 
             </div>
