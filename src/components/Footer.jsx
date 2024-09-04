@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <div className="bg-black  text-white p-8">
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-2  lg:grid-cols-5 gap-8">
         <div className="flex flex-col gap-3">
           <h1 className="text-[#FAFAFA] text-[24px] font-bold">Exclusive</h1>
           <h1 className="text-[#FAFAFA] text-[20px] font-medium">Subscribe</h1>
