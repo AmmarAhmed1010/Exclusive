@@ -328,7 +328,7 @@ const Index = () => {
               <img src="" alt="" />
             </div>
           </div>
-          <div className='w-full flex flex-col justify-center items-center gap-8'>
+          <div className='w-full grid grid-cols-2 justify-center items-center gap-8'>
             <div className='flex flex-col  w-[170px] py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaMobileAlt className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Phones</h3>
@@ -349,12 +349,16 @@ const Index = () => {
               <FaGamepad className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Gaming</h3>
             </div>
+            <div className='flex flex-col w-[170px] py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
+              <FaGamepad className='h-[56px] w-[56px]' />
+              <h3 className='text-lg font-medium'>Gaming</h3>
+            </div>
           </div>
         </section>
 
 
          {/* section4 */}
-         <section className='px-6 py-16'>
+         <section className='px-6 py-8'>
           <div className='w-full flex items-center gap-4'>
             <div className='w-[20px] h-[40px] rounded bg-[#DB4444]'></div>
             <h3 className='text-[#DB4444] text-lg'>This Month</h3>
