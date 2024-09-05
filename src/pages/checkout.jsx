@@ -9,6 +9,7 @@ const CheckoutPage = () => {
   const [city, setCity] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('credit');
+  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -22,7 +23,10 @@ const CheckoutPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission (e.g., send data to server)
-    alert('Order placed successfully!');
+    setShowModal(true); // Show the modal instead of alert
+  };
+
+  const handleContinueShopping = () => {
     localStorage.removeItem('cart'); // Clear cart after order
     router.push('/'); // Redirect to home page
   };
@@ -136,6 +140,22 @@ const CheckoutPage = () => {
           </form>
         </div>
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-md shadow-lg w-80">
+            <h2 className="text-lg font-semibold mb-4">Thank You for Shopping!</h2>
+            <p className="mb-4">Your order has been placed successfully. We appreciate your business.</p>
+            <button
+              onClick={handleContinueShopping}
+              className="bg-blue-500 text-white px-4 py-2 rounded w-full"
+            >
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

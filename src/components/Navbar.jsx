@@ -174,6 +174,35 @@ const Navbar = () => {
               >
                 <CiUser className={`w-6 h-6 ${isIconRed ? 'text-white' : 'text-black'}`} />
               </div>
+              {isDropdownOpen && (
+              <div
+                ref={dropdownRef}
+                className="absolute z-50 right-0 flex flex-col gap-3 top-8 bg-black mt-2 w-56 shadow-lg rounded-lg p-4"
+              >
+                <div className="flex items-center cursor-pointer gap-3">
+                  <CiUser style={{ color: "#FAFAFA" }} className="w-[24px] h-[24px]" />
+                  <h1 className="text-[#FAFAFA] text-[14px] font-normal">Manage My Account</h1>
+                </div>
+                <div className="flex items-center cursor-pointer gap-3">
+                  <div className="w-[24px] h-[24px]">
+                    <Image src="/navbar/icon-mallbag.png" width={24} height={24} alt="My Order Icon" />
+                  </div>
+                  <h1 className="text-[#FAFAFA] text-[14px] font-normal">My Order</h1>
+                </div>
+                <div className="flex items-center cursor-pointer gap-3">
+                  <MdOutlineCancel style={{ color: "#FAFAFA" }} className="w-[24px] h-[24px]" />
+                  <h1 className="text-[#FAFAFA] text-[14px] font-normal">My Cancellations</h1>
+                </div>
+                <div className="flex items-center cursor-pointer gap-3">
+                  <FaStar style={{ color: "#FAFAFA" }} className="w-[24px] h-[24px]" />
+                  <h1 className="text-[#FAFAFA] text-[14px] font-normal">My Reviews</h1>
+                </div>
+                <div className="flex items-center cursor-pointer gap-3">
+                  <FaSignOutAlt style={{ color: "#FAFAFA" }} className="w-[24px] h-[24px]" />
+                  <h1 className="text-[#FAFAFA] text-[14px] font-normal">Logout</h1>
+                </div>
+              </div>
+            )}
             </div>
           </div>
         </div>
