@@ -24,7 +24,7 @@ const ProductDetailPage = () => {
   if (!product) return <p>Product not found!</p>;
 
   return (
-    <div className="container mx-auto px-4 md:px-8 lg:px-32 my-8">
+    <div className="container mx-auto px-6 md:px-32 my-8">
       <div className="flex flex-col lg:flex-row gap-8">
         
         {/* First Column: Small images */}
@@ -78,7 +78,7 @@ const ProductDetailPage = () => {
         </div>
       </div>
 
-      <section className='hidden md:flex px-20 my-20 flex-col'>
+      <section className='hidden md:flex my-20 flex-col'>
       <div className='w-full flex items-center gap-4'>
             <div className='w-[20px] h-[40px] rounded bg-[#DB4444]'></div>
             <h3 className='text-[#DB4444] text-lg'>This Month</h3>

@@ -1,7 +1,7 @@
 const newproductsData = [
     {
       image: "/newproducts/product1.png",
-      title: "The North Coat",
+      title: "Breed Dry Dog Food",
       price: 260,
       originalPrice: 360,
       rating: 4,
@@ -9,7 +9,7 @@ const newproductsData = [
     },
     {
       image: "/newproducts/product2.png",
-      title: "Gucci duffle bag",
+      title: "CANON EOS DSLR Camera",
       price: 960,
       originalPrice: 1160,
       rating: 5,
@@ -17,7 +17,7 @@ const newproductsData = [
     },
     {
         image: "/newproducts/product3.png",
-        title: "RGB liquid CPU Cooler",
+        title: "ASUS FHD Gaming Laptop",
         price: 160,
         originalPrice: 170,
         rating: 1,
@@ -25,7 +25,7 @@ const newproductsData = [
       },
       {
         image: "/newproducts/product4.png",
-        title: "Small BookSelf",
+        title: "Curology Product Set",
         price: 360,
         originalPrice: 1160,
         rating: 3,
@@ -33,7 +33,7 @@ const newproductsData = [
       },
       {
         image: "/newproducts/product5.png",
-        title: "The North Coat",
+        title: "Kids Electric Car",
         price: 260,
         originalPrice: 360,
         rating: 4,
@@ -41,7 +41,7 @@ const newproductsData = [
       },
       {
         image: "/newproducts/product6.png",
-        title: "Gucci duffle bag",
+        title: "Soccer Cleats",
         price: 960,
         originalPrice: 1160,
         rating: 5,
@@ -49,7 +49,7 @@ const newproductsData = [
       },
       {
           image: "/newproducts/product7.png",
-          title: "RGB liquid CPU Cooler",
+          title: "GP11 Shooter USB Gamepad",
           price: 160,
           originalPrice: 170,
           rating: 1,
@@ -57,7 +57,7 @@ const newproductsData = [
         },
         {
           image: "/newproducts/product8.png",
-          title: "Small BookSelf",
+          title: "Quilted Satin Jacket",
           price: 360,
           originalPrice: 1160,
           rating: 3,
