@@ -3,30 +3,9 @@ import { FaMobileAlt, FaLaptop, FaWatch, FaCamera, FaHeadphones, FaGamepad } fro
 import React, { useState, useEffect } from 'react';
 import { FaChevronRight } from 'react-icons/fa';
 import ProductCard from '@/components/ProductCard';
-import productsData from '@/productsData';
 import newproductsData from '@/newproductsData';
 import Link from 'next/link';
 const Index = () => {
-
-  // const products = [
-  //   {
-  //     image: "/index/item1.png",
-  //     title: "The North Coat",
-  //     price: 260,
-  //     originalPrice: 360,
-  //     rating: 5,
-  //     reviews: 65,
-  //   },
-  //   {
-  //     image: "/index/item2.png",
-  //     title: "Another Product",
-  //     price: 180,
-  //     originalPrice: 250,
-  //     rating: 4,
-  //     reviews: 48,
-  //   },
-  //   // Add more products as needed
-  // ];
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -397,37 +376,38 @@ const Index = () => {
               ))}
             </div>
           </div>
-          <div className='w-full bg-black p-10 flex flex-col-reverse justify-between'>
-            <div className="left">
-              <h4 className='text-[#00FF66] text-lg mt-4 mb-4'>Categories</h4>
-              <h1 className='text-white text-[48px] font-semibold'>Enhance Your</h1>
-              <h1 className='text-white text-[48px] font-semibold mb-10'> Music Experience</h1>
-              <div className='flex mb-10 gap-3'>
-                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-                  <h3 className='font-bold'>23</h3>
-                  <h3 className='font-semibold'>Hours</h3>
-                </div>
-                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-                  <h3 className='font-bold'>5</h3>
-                  <h3 className='font-semibold'>Days</h3>
-                </div>
-                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-                  <h3 className='font-bold'>59</h3>
-                  <h3 className='font-semibold'>Minutes</h3>
-                </div>
-                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-                  <h3 className='font-bold'>35</h3>
-                  <h3 className='font-semibold'>Seconds</h3>
-                </div>
-              </div>
-              <button className='bg-[#00FF66] px-8 py-2 rounded'>
-                <h4 className='text-white'>Buy Now!</h4>
-              </button>
-            </div>
-            <div className="right h-full flex justify-center items-center">
-              <img src="/index/speaker.png" alt="" />
-            </div>
-          </div>
+          <div className='w-full bg-black p-10 flex flex-col md:flex-row justify-between'>
+  <div className="left text-center md:text-left">
+    <h4 className='text-[#00FF66] text-lg mt-4 mb-4'>Categories</h4>
+    <h1 className='text-white text-[36px] md:text-[48px] font-semibold'>Enhance Your</h1>
+    <h1 className='text-white text-[36px] md:text-[48px] font-semibold mb-6 md:mb-10'>Music Experience</h1>
+    <div className='flex justify-center md:justify-start mb-6 md:mb-10 gap-3'>
+      <div className='w-[50px] h-[50px] md:w-[62px] md:h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+        <h3 className='font-bold text-[14px] md:text-[16px]'>23</h3>
+        <h3 className='font-semibold text-[12px] md:text-[14px]'>Hours</h3>
+      </div>
+      <div className='w-[50px] h-[50px] md:w-[62px] md:h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+        <h3 className='font-bold text-[14px] md:text-[16px]'>5</h3>
+        <h3 className='font-semibold text-[12px] md:text-[14px]'>Days</h3>
+      </div>
+      <div className='w-[50px] h-[50px] md:w-[62px] md:h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+        <h3 className='font-bold text-[14px] md:text-[16px]'>59</h3>
+        <h3 className='font-semibold text-[12px] md:text-[14px]'>Minutes</h3>
+      </div>
+      <div className='w-[50px] h-[50px] md:w-[62px] md:h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+        <h3 className='font-bold text-[14px] md:text-[16px]'>35</h3>
+        <h3 className='font-semibold text-[12px] md:text-[14px]'>Seconds</h3>
+      </div>
+    </div>
+    <button className='bg-[#00FF66] px-6 md:px-8 py-2 rounded'>
+      <h4 className='text-white'>Buy Now!</h4>
+    </button>
+  </div>
+  <div className="right h-full flex justify-center items-center mt-8 md:mt-0">
+    <img src="/index/speaker.png" alt="Speaker" className='max-w-full h-auto' />
+  </div>
+</div>
+
         </section>
 
         {/* section5 */}
@@ -462,9 +442,11 @@ const Index = () => {
             </div>
           </div>
           <div className='flex w-full justify-center items-center'>
+          <Link href="/all-products">
             <button className='bg-[#DB4444] text-lg rounded text-white '>
               <h3 className='px-8 py-2'>View All Products</h3>
             </button>
+            </Link>
           </div>
         </section>
 

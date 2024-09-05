@@ -115,7 +115,7 @@ const ProductDetailPage = () => {
             </div>
       </section>
 
-      <section className='md:hidden flex flex-col px-4 my-10'>
+      <section className='md:hidden flex flex-col my-10'>
       <div className='w-full flex items-center gap-4'>
             <div className='w-[20px] h-[40px] rounded bg-[#DB4444]'></div>
             <h3 className='text-[#DB4444] text-lg'>This Month</h3>

@@ -1,4 +1,4 @@
-const newproductsData = [
+const allproductsData = [
     {
       image: "/newproducts/product1.png",
       title: "Breed Dry Dog Food",
@@ -67,5 +67,5 @@ const newproductsData = [
     // Add more products as needed
   ];
   
-  export default newproductsData;
+  export default allproductsData;
   
