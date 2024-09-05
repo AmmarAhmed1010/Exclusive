@@ -371,11 +371,11 @@ const Index = () => {
             <h3 className='text-[#DB4444] text-lg'>This Month</h3>
           </div>
           <div className='w-full mt-2 flex justify-between'>
-            <h1 className='text-[20px] font-bold mb-8'>Best Selling Products</h1>
+            <h1 className='text-lg font-bold mb-8'>Best Selling Products</h1>
             <div>
               <Link href="/all-products">
                 <button className='bg-[#DB4444] rounded'>
-                  <h4 className='text-white text-lg font-medium px-10 py-4'>View All</h4>
+                  <h4 className='text-white text-sm font-medium py-2 px-4'>View All</h4>
                 </button>
               </Link>
             </div>
