@@ -5,6 +5,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import ProductCard from '@/components/ProductCard';
 import productsData from '@/productsData';
 import newproductsData from '@/newproductsData';
+import Link from 'next/link';
 const Index = () => {
 
   // const products = [
@@ -145,58 +146,62 @@ const Index = () => {
             </div>
 
           </div>
+
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-      {productsData.map((product, index) => (
-        <ProductCard
-          key={index}
-          image={product.image}
-          title={product.title}
-          price={product.price}
-          originalPrice={product.originalPrice}
-          rating={product.rating}
-          reviews={product.reviews}
-        />
-      ))}
-    </div>
-          </div>
-          <div className='w-full h-[500px] bg-black p-10 flex justify-between'>
-           <div className="left">
-            <h4 className='text-[#00FF66] text-lg mt-4 mb-4'>Categories</h4>
-            <h1 className='text-white text-[48px] font-semibold'>Enhance Your</h1>
-            <h1 className='text-white text-[48px] font-semibold mb-10'> Music Experience</h1>
-            <div className='flex mb-10 gap-3'>
-              <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-                <h3 className='font-bold'>23</h3>
-                <h3 className='font-semibold'>Hours</h3>
-              </div>
-              <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-              <h3 className='font-bold'>5</h3>
-              <h3 className='font-semibold'>Days</h3>
-              </div>
-              <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-              <h3 className='font-bold'>59</h3>
-              <h3 className='font-semibold'>Minutes</h3>
-              </div>
-              <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-              <h3 className='font-bold'>35</h3>
-              <h3 className='font-semibold'>Seconds</h3>
-              </div>
+              {newproductsData.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  productId={index.toString()}  // Ensure this is passed as a string
+                  image={product.image}
+                  title={product.title}
+                  price={product.price}
+                  originalPrice={product.originalPrice}
+                  rating={product.rating}
+                  reviews={product.reviews}
+                />
+              ))}
             </div>
-            <button className='bg-[#00FF66] px-8 py-2 rounded'>
-              <h4 className='text-white'>Buy Now!</h4>
-            </button>
-           </div>
-           <div className="right w-[60%] h-full flex justify-center items-center">
-            <img src="/index/speaker.png" alt="" />
-           </div>
+
+          </div>
+
+          <div className='w-full h-[500px] bg-black p-10 flex justify-between'>
+            <div className="left">
+              <h4 className='text-[#00FF66] text-lg mt-4 mb-4'>Categories</h4>
+              <h1 className='text-white text-[48px] font-semibold'>Enhance Your</h1>
+              <h1 className='text-white text-[48px] font-semibold mb-10'> Music Experience</h1>
+              <div className='flex mb-10 gap-3'>
+                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+                  <h3 className='font-bold'>23</h3>
+                  <h3 className='font-semibold'>Hours</h3>
+                </div>
+                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+                  <h3 className='font-bold'>5</h3>
+                  <h3 className='font-semibold'>Days</h3>
+                </div>
+                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+                  <h3 className='font-bold'>59</h3>
+                  <h3 className='font-semibold'>Minutes</h3>
+                </div>
+                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+                  <h3 className='font-bold'>35</h3>
+                  <h3 className='font-semibold'>Seconds</h3>
+                </div>
+              </div>
+              <button className='bg-[#00FF66] px-8 py-2 rounded'>
+                <h4 className='text-white'>Buy Now!</h4>
+              </button>
+            </div>
+            <div className="right w-[60%] h-full flex justify-center items-center">
+              <img src="/index/speaker.png" alt="" />
+            </div>
           </div>
         </section>
 
         {/* section5 */}
         <section className='px-32 py-16'>
-        <div className='w-full flex items-center gap-4'>
+          <div className='w-full flex items-center gap-4'>
             <div className='w-[20px] h-[40px] rounded bg-[#DB4444]'></div>
             <h3 className='text-[#DB4444] text-lg'>Our Products</h3>
           </div>
@@ -211,18 +216,20 @@ const Index = () => {
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-      {newproductsData.map((product, index) => (
-        <ProductCard
-          key={index}
-          image={product.image}
-          title={product.title}
-          price={product.price}
-          originalPrice={product.originalPrice}
-          rating={product.rating}
-          reviews={product.reviews}
-        />
-      ))}
-    </div>
+              {newproductsData.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  productId={index.toString()}  // Ensure this is passed as a string
+                  image={product.image}
+                  title={product.title}
+                  price={product.price}
+                  originalPrice={product.originalPrice}
+                  rating={product.rating}
+                  reviews={product.reviews}
+                />
+              ))}
+            </div>
+
           </div>
           <div className='flex w-full justify-center items-center'>
             <button className='bg-[#DB4444]  rounded text-white '>
@@ -234,22 +241,22 @@ const Index = () => {
 
         {/* section6 */}
         <section>
-        <div className='w-full px-4 md:px-20 py-10 flex flex-col md:flex-row justify-between gap-8'>
-          {[{ iconSrc: "/about/icon_shop.png", title: "FREE AND FAST DELIVERY", text: "Free delivery for all orders over $140" },
+          <div className='w-full px-4 md:px-20 py-10 flex flex-col md:flex-row justify-between gap-8'>
+            {[{ iconSrc: "/about/icon_shop.png", title: "FREE AND FAST DELIVERY", text: "Free delivery for all orders over $140" },
             { iconSrc: "/about/Icon-Shopping bag.png", title: "24/7 CUSTOMER SERVICE", text: "Friendly 24/7 customer support" },
             { iconSrc: "/about/Icon-Shopping bag.png", title: "MONEY BACK GUARANTEE", text: "We return money within 30 days" }]
-            .map((item, index) => (
-              <div key={index} className="flex-1 py-6 flex flex-col items-center text-center">
-                <div className="icon flex items-center justify-center w-[80px] h-[80px] bg-[#2F2E30] rounded-full">
-                  <div className='w-[58px] h-[58px] bg-black rounded-full flex items-center justify-center'>
-                    <img src={item.iconSrc} className='w-[40px] h-[40px]' alt="" />
+              .map((item, index) => (
+                <div key={index} className="flex-1 py-6 flex flex-col items-center text-center">
+                  <div className="icon flex items-center justify-center w-[80px] h-[80px] bg-[#2F2E30] rounded-full">
+                    <div className='w-[58px] h-[58px] bg-black rounded-full flex items-center justify-center'>
+                      <img src={item.iconSrc} className='w-[40px] h-[40px]' alt="" />
+                    </div>
                   </div>
+                  <h1 className='text-lg mt-5 mb-3 font-bold'>{item.title}</h1>
+                  <h4 className='font-semibold'>{item.text}</h4>
                 </div>
-                <h1 className='text-lg mt-5 mb-3 font-bold'>{item.title}</h1>
-                <h4 className='font-semibold'>{item.text}</h4>
-              </div>
-            ))}
-        </div>
+              ))}
+          </div>
         </section>
 
       </div>
@@ -357,8 +364,8 @@ const Index = () => {
         </section>
 
 
-         {/* section4 */}
-         <section className='px-6 py-8'>
+        {/* section4 */}
+        <section className='px-6 py-8'>
           <div className='w-full flex items-center gap-4'>
             <div className='w-[20px] h-[40px] rounded bg-[#DB4444]'></div>
             <h3 className='text-[#DB4444] text-lg'>This Month</h3>
@@ -376,55 +383,56 @@ const Index = () => {
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full grid-cols-2 gap-6'>
-      {productsData.map((product, index) => (
-        <ProductCard
-          key={index}
-          image={product.image}
-          title={product.title}
-          price={product.price}
-          originalPrice={product.originalPrice}
-          rating={product.rating}
-          reviews={product.reviews}
-        />
-      ))}
-    </div>
+            {newproductsData.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  productId={index.toString()}  // Ensure this is passed as a string
+                  image={product.image}
+                  title={product.title}
+                  price={product.price}
+                  originalPrice={product.originalPrice}
+                  rating={product.rating}
+                  reviews={product.reviews}
+                />
+              ))}
+            </div>
           </div>
           <div className='w-full bg-black p-10 flex flex-col-reverse justify-between'>
-           <div className="left">
-            <h4 className='text-[#00FF66] text-lg mt-4 mb-4'>Categories</h4>
-            <h1 className='text-white text-[48px] font-semibold'>Enhance Your</h1>
-            <h1 className='text-white text-[48px] font-semibold mb-10'> Music Experience</h1>
-            <div className='flex mb-10 gap-3'>
-              <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-                <h3 className='font-bold'>23</h3>
-                <h3 className='font-semibold'>Hours</h3>
+            <div className="left">
+              <h4 className='text-[#00FF66] text-lg mt-4 mb-4'>Categories</h4>
+              <h1 className='text-white text-[48px] font-semibold'>Enhance Your</h1>
+              <h1 className='text-white text-[48px] font-semibold mb-10'> Music Experience</h1>
+              <div className='flex mb-10 gap-3'>
+                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+                  <h3 className='font-bold'>23</h3>
+                  <h3 className='font-semibold'>Hours</h3>
+                </div>
+                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+                  <h3 className='font-bold'>5</h3>
+                  <h3 className='font-semibold'>Days</h3>
+                </div>
+                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+                  <h3 className='font-bold'>59</h3>
+                  <h3 className='font-semibold'>Minutes</h3>
+                </div>
+                <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
+                  <h3 className='font-bold'>35</h3>
+                  <h3 className='font-semibold'>Seconds</h3>
+                </div>
               </div>
-              <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-              <h3 className='font-bold'>5</h3>
-              <h3 className='font-semibold'>Days</h3>
-              </div>
-              <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-              <h3 className='font-bold'>59</h3>
-              <h3 className='font-semibold'>Minutes</h3>
-              </div>
-              <div className='w-[62px] h-[62px] bg-white rounded-[50%] flex flex-col justify-center items-center'>
-              <h3 className='font-bold'>35</h3>
-              <h3 className='font-semibold'>Seconds</h3>
-              </div>
+              <button className='bg-[#00FF66] px-8 py-2 rounded'>
+                <h4 className='text-white'>Buy Now!</h4>
+              </button>
             </div>
-            <button className='bg-[#00FF66] px-8 py-2 rounded'>
-              <h4 className='text-white'>Buy Now!</h4>
-            </button>
-           </div>
-           <div className="right h-full flex justify-center items-center">
-            <img src="/index/speaker.png" alt="" />
-           </div>
+            <div className="right h-full flex justify-center items-center">
+              <img src="/index/speaker.png" alt="" />
+            </div>
           </div>
         </section>
 
         {/* section5 */}
         <section className='px-6 py-16'>
-        <div className='w-full flex items-center gap-4'>
+          <div className='w-full flex items-center gap-4'>
             <div className='w-[20px] h-[40px] rounded bg-[#DB4444]'></div>
             <h3 className='text-[#DB4444] text-lg'>Our Products</h3>
           </div>
@@ -439,18 +447,19 @@ const Index = () => {
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full grid-cols-2 gap-6'>
-      {newproductsData.map((product, index) => (
-        <ProductCard
-          key={index}
-          image={product.image}
-          title={product.title}
-          price={product.price}
-          originalPrice={product.originalPrice}
-          rating={product.rating}
-          reviews={product.reviews}
-        />
-      ))}
-    </div>
+            {newproductsData.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  productId={index.toString()}  // Ensure this is passed as a string
+                  image={product.image}
+                  title={product.title}
+                  price={product.price}
+                  originalPrice={product.originalPrice}
+                  rating={product.rating}
+                  reviews={product.reviews}
+                />
+              ))}
+            </div>
           </div>
           <div className='flex w-full justify-center items-center'>
             <button className='bg-[#DB4444] text-lg rounded text-white '>
@@ -462,22 +471,22 @@ const Index = () => {
 
         {/* section6 */}
         <section>
-        <div className='w-full px-6 md:px-20 py-10 flex flex-col md:flex-row justify-between gap-8'>
-          {[{ iconSrc: "/about/icon_shop.png", title: "FREE AND FAST DELIVERY", text: "Free delivery for all orders over $140" },
+          <div className='w-full px-6 md:px-20 py-10 flex flex-col md:flex-row justify-between gap-8'>
+            {[{ iconSrc: "/about/icon_shop.png", title: "FREE AND FAST DELIVERY", text: "Free delivery for all orders over $140" },
             { iconSrc: "/about/Icon-Shopping bag.png", title: "24/7 CUSTOMER SERVICE", text: "Friendly 24/7 customer support" },
             { iconSrc: "/about/Icon-Shopping bag.png", title: "MONEY BACK GUARANTEE", text: "We return money within 30 days" }]
-            .map((item, index) => (
-              <div key={index} className="flex-1 py-6 flex flex-col items-center text-center">
-                <div className="icon flex items-center justify-center w-[80px] h-[80px] bg-[#2F2E30] rounded-full">
-                  <div className='w-[58px] h-[58px] bg-black rounded-full flex items-center justify-center'>
-                    <img src={item.iconSrc} className='w-[40px] h-[40px]' alt="" />
+              .map((item, index) => (
+                <div key={index} className="flex-1 py-6 flex flex-col items-center text-center">
+                  <div className="icon flex items-center justify-center w-[80px] h-[80px] bg-[#2F2E30] rounded-full">
+                    <div className='w-[58px] h-[58px] bg-black rounded-full flex items-center justify-center'>
+                      <img src={item.iconSrc} className='w-[40px] h-[40px]' alt="" />
+                    </div>
                   </div>
+                  <h1 className='text-lg mt-5 mb-3 font-bold'>{item.title}</h1>
+                  <h4 className='font-semibold'>{item.text}</h4>
                 </div>
-                <h1 className='text-lg mt-5 mb-3 font-bold'>{item.title}</h1>
-                <h4 className='font-semibold'>{item.text}</h4>
-              </div>
-            ))}
-        </div>
+              ))}
+          </div>
         </section>
       </div>
     </div>
