@@ -35,11 +35,11 @@ const Index = () => {
   <div className="wrapper flex flex-col md:flex-row">
     <div className="left w-full md:w-[217px] flex flex-col justify-between pt-8 border-r pb-4 border-gray-300 mr-0 md:mr-10 gap-4">
       <div className='flex justify-between pr-4 cursor-pointer'>
-        <h3 className='text-lg leading-6 font-semibold'>Women's Fashion</h3>
+        <h3 className='text-lg leading-6 font-semibold'>Womens Fashion</h3>
         <img src="/index/icon-arrow-black.png" className='w-6' alt="Arrow Icon" />
       </div>
       <div className='flex justify-between pr-4 cursor-pointer'>
-        <h3 className='text-lg leading-6 font-semibold'>Men's Fashion</h3>
+        <h3 className='text-lg leading-6 font-semibold'>Mens Fashion</h3>
         <img src="/index/icon-arrow-black.png" className='w-6' alt="Arrow Icon" />
       </div>
       <h3 className='text-lg leading-6 font-semibold'>Electronics</h3>
