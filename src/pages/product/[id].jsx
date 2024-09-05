@@ -86,11 +86,12 @@ const ProductDetailPage = () => {
           <div className='w-full mt-2 flex justify-between'>
             <h1 className='text-[36px] font-bold mb-8'>Best Selling Products</h1>
             <div>
-              <button className='bg-[#DB4444] rounded'>
-                <h4 className='text-white text-lg font-medium px-10 py-4'>View All</h4>
-              </button>
-
-            </div>
+      <a href="/all-products">
+        <button className='bg-[#DB4444] rounded'>
+          <h4 className='text-white text-lg font-medium px-10 py-4'>View All</h4>
+        </button>
+      </a>
+    </div>
 
           </div>
 
@@ -121,11 +122,12 @@ const ProductDetailPage = () => {
           <div className='w-full mt-2 flex justify-between'>
             <h1 className='text-[20px] font-bold mb-8'>Best Selling Products</h1>
             <div>
-              <button className='bg-[#DB4444] rounded'>
-                <h4 className='text-white text-sm font-medium px-6 py-2'>View All</h4>
-              </button>
-
-            </div>
+      <a href="/all-products">
+        <button className='bg-[#DB4444] rounded'>
+          <h4 className='text-white text-lg font-medium px-10 py-4'>View All</h4>
+        </button>
+      </a>
+    </div>
 
           </div>
           <div className='w-full flex mb-20 justify-between'>
