@@ -29,7 +29,6 @@ const ProductDetailPage = () => {
 
   useEffect(() => {
     if (id) {
-      // Assuming `id` is a valid product ID and productsData contains `id`
       const productId = parseInt(id, 10);
       const foundProduct = newproductsData.find((product) => product.id === productId);
       setProduct(foundProduct);
