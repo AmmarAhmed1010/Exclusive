@@ -3,6 +3,7 @@ import newproductsData from '@/newproductsData'; // Replace with your product da
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import ProductCard from '@/components/ProductCard';
+import Link from 'next/link';
 const ProductDetailPage = () => {
   const router = useRouter();
   const { id } = router.query;
