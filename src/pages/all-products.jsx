@@ -1,6 +1,6 @@
 // pages/all-products.js
 import ProductCard from '@/components/ProductCard';
-import newproductsData from './allproductsData';
+import newproductsData from '@/newproductsData';
 
 const AllProductsPage = () => {
   return (
