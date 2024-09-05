@@ -31,46 +31,47 @@ const Index = () => {
       {/* PC View */}
       <div className='hidden md:block'>
         {/* section1 */}
-        <section className='flex justify-center px-20 mb-20 items-center w-full'>
-          <div className="wrapper flex">
-            <div className="left w-[217px] flex flex-col justify-between pt-10 border-r pb-4 border-gray-300 mr-10 gap-2">
-              <div className='flex justify-between pr-4 cursor-pointer'>
-                <h3 className='text-[16px] leading-6'>Womans Fashion</h3>
-                <img src="/index/icon-arrow-black.png" className='w-6' alt="" />
-              </div>
-              <div className='flex justify-between pr-4 cursor-pointer'>
-                <h3 className='text-[16px] leading-6'>Mens Fashion</h3>
-                <img src="/index/icon-arrow-black.png" className='w-6' alt="" />
-              </div>
-              <h3 className='text-[16px] leading-6'>Electronics</h3>
-              <h3 className='text-[16px] leading-6'>Home & Lifestyle</h3>
-              <h3 className='text-[16px] leading-6'>Medicine</h3>
-              <h3 className='text-[16px] leading-6'>Sports & Outdoor</h3>
-              <h3 className='text-[16px] leading-6'>Babys & Toys</h3>
-              <h3 className='text-[16px] leading-6'>Groceries & Pets</h3>
-              <h3 className='text-[16px] leading-6'>Health & Beauty</h3>
-            </div>
-            <div className="right h-[344px] pt-10 w-[892px]">
-              <div className='bg-black flex w-full h-full justify-between'>
-                <div className="left flex flex-col justify-center px-16 h-full w-full text-white">
-                  <div className='flex items-center justify-start gap-4'>
-                    <img src="/index/icon-apple.png" className='w-[49px] h-[49px]' alt="" />
-                    <h3 className='text-[14px]'>iPhone 14 Series</h3>
-                  </div>
-                  <h1 className='text-[48px] font-bold'>Up to 10%</h1>
-                  <h1 className='text-[48px] font-bold'>off Voucher</h1>
-                  <div className='flex gap-4 cursor-pointer'>
-                    <h3 className='underline text-sm'>Shop Now</h3>
-                    <img src="/index/icon-arrow-right.png" className='w-6' alt="" />
-                  </div>
-                </div>
-                <div className="w-full flex pt-16 h-full">
-                  <img src="/index/hero.png" alt="" />
-                </div>
-              </div>
-            </div>
+        <section className='flex justify-center px-8 md:px-20 mb-20 items-center w-full'>
+  <div className="wrapper flex flex-col md:flex-row">
+    <div className="left w-full md:w-[217px] flex flex-col justify-between pt-8 border-r pb-4 border-gray-300 mr-0 md:mr-10 gap-4">
+      <div className='flex justify-between pr-4 cursor-pointer'>
+        <h3 className='text-lg leading-6 font-semibold'>Women's Fashion</h3>
+        <img src="/index/icon-arrow-black.png" className='w-6' alt="Arrow Icon" />
+      </div>
+      <div className='flex justify-between pr-4 cursor-pointer'>
+        <h3 className='text-lg leading-6 font-semibold'>Men's Fashion</h3>
+        <img src="/index/icon-arrow-black.png" className='w-6' alt="Arrow Icon" />
+      </div>
+      <h3 className='text-lg leading-6 font-semibold'>Electronics</h3>
+      <h3 className='text-lg leading-6 font-semibold'>Home & Lifestyle</h3>
+      <h3 className='text-lg leading-6 font-semibold'>Medicine</h3>
+      <h3 className='text-lg leading-6 font-semibold'>Sports & Outdoor</h3>
+      <h3 className='text-lg leading-6 font-semibold'>Baby & Toys</h3>
+      <h3 className='text-lg leading-6 font-semibold'>Groceries & Pets</h3>
+      <h3 className='text-lg leading-6 font-semibold'>Health & Beauty</h3>
+    </div>
+    <div className="right w-full md:w-[60vw] pt-8 md:pt-10">
+      <div className='bg-black flex flex-col md:flex-row w-full h-full text-white'>
+        <div className="left flex flex-col justify-center px-4 md:px-16 h-full w-full text-white">
+          <div className='flex items-center justify-start gap-4 mb-4'>
+            <img src="/index/icon-apple.png" className='w-12 h-12' alt="Apple Icon" />
+            <h3 className='text-sm md:text-base font-semibold'>iPhone 14 Series</h3>
           </div>
-        </section>
+          <h1 className='text-3xl md:text-5xl font-bold mb-2'>Up to 10%</h1>
+          <h1 className='text-3xl md:text-5xl font-bold'>off Voucher</h1>
+          <div className='flex items-center gap-4 mt-4 cursor-pointer'>
+            <h3 className='underline text-sm md:text-base'>Shop Now</h3>
+            <img src="/index/icon-arrow-right.png" className='w-6' alt="Arrow Icon" />
+          </div>
+        </div>
+        <div className="right-image flex items-center justify-center w-full md:w-1/2 h-full pt-8">
+          <img src="/index/hero.png" alt="Hero Image" className='w-full h-auto' />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* section3 */}
         <section className='border-t border-b px-32 border-gray-300 py-16 my-20'>
