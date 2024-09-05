@@ -9,6 +9,14 @@ const ProductDetailPage = () => {
   const { id } = router.query;
   
   const [product, setProduct] = useState(null);
+  const handleAddToCart = () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    router.push('/cart');
+  };
+  
+  
 
   useEffect(() => {
     if (id) {
@@ -73,7 +81,7 @@ const ProductDetailPage = () => {
           <p className="mt-4 text-sm sm:text-base">This is a brief description of the product.</p>
           
           {/* Add to Cart button */}
-          <button className="mt-6 bg-red-500 text-white py-2 px-3 sm:py-2 sm:px-4 rounded hover:bg-red-600">
+          <button onClick={handleAddToCart} className="mt-6 bg-red-500 text-white py-2 px-3 sm:py-2 sm:px-4 rounded hover:bg-red-600">
             Add to Cart
           </button>
         </div>
