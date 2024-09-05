@@ -131,16 +131,16 @@ const Index = () => {
             {/* card1 */}
             <div className='grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
               {newproductsData.map((product, index) => (
-                <ProductCard
-                  key={index}
-                  productId={index.toString()}  // Ensure this is passed as a string
-                  image={product.image}
-                  title={product.title}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  rating={product.rating}
-                  reviews={product.reviews}
-                />
+               <ProductCard
+               key={product.id} // Use product ID
+               productId={product.id.toString()} // Ensure this is passed as a string
+               image={product.image}
+               title={product.title}
+               price={product.price}
+               originalPrice={product.originalPrice}
+               rating={product.rating}
+               reviews={product.reviews}
+             />
               ))}
             </div>
 
@@ -198,15 +198,15 @@ const Index = () => {
             <div className='grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
               {newproductsData.map((product, index) => (
                 <ProductCard
-                  key={index}
-                  productId={index.toString()}  // Ensure this is passed as a string
-                  image={product.image}
-                  title={product.title}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  rating={product.rating}
-                  reviews={product.reviews}
-                />
+                key={product.id} // Use product ID
+                productId={product.id.toString()} // Ensure this is passed as a string
+                image={product.image}
+                title={product.title}
+                price={product.price}
+                originalPrice={product.originalPrice}
+                rating={product.rating}
+                reviews={product.reviews}
+              />
               ))}
             </div>
 
@@ -364,16 +364,16 @@ const Index = () => {
             {/* card1 */}
             <div className='grid w-full grid-cols-2 gap-6'>
               {newproductsData.map((product, index) => (
-                <ProductCard
-                  key={index}
-                  productId={index.toString()}  // Ensure this is passed as a string
-                  image={product.image}
-                  title={product.title}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  rating={product.rating}
-                  reviews={product.reviews}
-                />
+               <ProductCard
+               key={product.id} // Use product ID
+               productId={product.id.toString()} // Ensure this is passed as a string
+               image={product.image}
+               title={product.title}
+               price={product.price}
+               originalPrice={product.originalPrice}
+               rating={product.rating}
+               reviews={product.reviews}
+             />
               ))}
             </div>
           </div>
@@ -428,17 +428,17 @@ const Index = () => {
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full grid-cols-2 gap-6'>
-              {newproductsData.map((product, index) => (
-                <ProductCard
-                  key={index}
-                  productId={index.toString()}  // Ensure this is passed as a string
-                  image={product.image}
-                  title={product.title}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  rating={product.rating}
-                  reviews={product.reviews}
-                />
+              {newproductsData.map((product) => (
+               <ProductCard
+               key={product.id} // Use product ID
+               productId={product.id.toString()} // Ensure this is passed as a string
+               image={product.image}
+               title={product.title}
+               price={product.price}
+               originalPrice={product.originalPrice}
+               rating={product.rating}
+               reviews={product.reviews}
+             />
               ))}
             </div>
           </div>

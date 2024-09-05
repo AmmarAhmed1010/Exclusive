@@ -1,5 +1,5 @@
 "use client";
-import newproductsData from '@/newproductsData'; // Replace with your product data
+import newproductsData from '@/newproductsData'; // Ensure this has product IDs
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useCart } from '@/context/CartContext';
@@ -29,8 +29,9 @@ const ProductDetailPage = () => {
 
   useEffect(() => {
     if (id) {
+      // Assuming `id` is a valid product ID and productsData contains `id`
       const productId = parseInt(id, 10);
-      const foundProduct = newproductsData.find((_, index) => index === productId);
+      const foundProduct = newproductsData.find((product) => product.id === productId);
       setProduct(foundProduct);
     }
   }, [id]);
@@ -144,10 +145,10 @@ const ProductDetailPage = () => {
         <div className="w-full flex mb-20 justify-between">
           {/* Product Cards */}
           <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {newproductsData.map((product, index) => (
+            {newproductsData.map((product) => (
               <ProductCard
-                key={index}
-                productId={index.toString()} // Ensure this is passed as a string
+                key={product.id} // Use product ID
+                productId={product.id.toString()} // Ensure this is passed as a string
                 image={product.image}
                 title={product.title}
                 price={product.price}
@@ -181,10 +182,10 @@ const ProductDetailPage = () => {
         <div className="w-full flex mb-20 justify-between">
           {/* Product Cards */}
           <div className="grid w-full grid-cols-2 gap-6">
-            {newproductsData.map((product, index) => (
+            {newproductsData.map((product) => (
               <ProductCard
-                key={index}
-                productId={index.toString()} // Ensure this is passed as a string
+                key={product.id} // Use product ID
+                productId={product.id.toString()} // Ensure this is passed as a string
                 image={product.image}
                 title={product.title}
                 price={product.price}

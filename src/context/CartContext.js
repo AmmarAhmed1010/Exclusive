@@ -13,21 +13,25 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
     setCartItems(storedCart);
-    setCartItemCount(storedCart.reduce((sum, item) => sum + (item.quantity || 1), 0));
+    setCartItemCount(storedCart.reduce((sum, item) => sum + item.quantity, 0));
   }, []);
 
   const addToCart = (product) => {
+    // Check if product already exists in the cart
+    const existingItemIndex = cartItems.findIndex(item => item.id === product.id);
     const updatedCart = [...cartItems];
-    const itemIndex = updatedCart.findIndex((item) => item.id === product.id);
 
-    if (itemIndex !== -1) {
-      updatedCart[itemIndex].quantity += 1;
+    if (existingItemIndex > -1) {
+      // Product exists, increase quantity
+      updatedCart[existingItemIndex].quantity += 1;
     } else {
+      // Product doesn't exist, add new item
       updatedCart.push({ ...product, quantity: 1 });
     }
 
+    // Update cart and localStorage
     setCartItems(updatedCart);
-    setCartItemCount((prevCount) => prevCount + 1);
+    setCartItemCount(updatedCart.reduce((sum, item) => sum + item.quantity, 0));
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
@@ -36,6 +40,7 @@ export const CartProvider = ({ children }) => {
     const removedItem = updatedCart[index];
     const newCart = updatedCart.filter((_, i) => i !== index);
 
+    // Update cart and localStorage
     setCartItems(newCart);
     setCartItemCount((prevCount) => prevCount - removedItem.quantity);
     localStorage.setItem('cart', JSON.stringify(newCart));
