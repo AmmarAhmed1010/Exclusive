@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image'; // Importing Next.js Image component
 
-const contact = () => {
+const Contact = () => {
   return (
     <div className="wrapper flex flex-col lg:flex-row gap-8 w-full justify-center py-14 px-6">
       {/* left */}
       <div className="w-full lg:w-[340px] h-auto lg:h-[457px] flex flex-col px-8 py-8 shadow-xl">
         <div className="flex mb-5 items-center gap-4">
           <div className="h-[40px] w-[40px] rounded-3xl flex items-center justify-center bg-[#DB4444]">
-            <img src="/contact/icon-phone.png" className="w-[20px] h-[20px]" />
+            <Image src="/contact/icon-phone.png" width={20} height={20} alt="Phone Icon" /> {/* Replaced img with Image */}
           </div>
           <h1 className="text-[16px] font-medium">Call To Us</h1>
         </div>
@@ -16,7 +17,7 @@ const contact = () => {
         <hr className="my-8 border-none h-[1px] bg-black" />
         <div className="flex mb-5 items-center gap-4">
           <div className="h-[40px] w-[40px] rounded-3xl flex items-center justify-center bg-[#DB4444]">
-            <img src="/contact/icon-email.png" className="w-[20px] h-[14px]" />
+            <Image src="/contact/icon-email.png" width={20} height={14} alt="Email Icon" /> {/* Replaced img with Image */}
           </div>
           <h1 className="text-[16px] font-medium">Write To Us</h1>
         </div>
@@ -42,7 +43,7 @@ const contact = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default contact
+export default Contact;

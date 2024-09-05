@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Importing Next.js Image component
 import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Importing Twitter, Instagram, and LinkedIn icons
 
 const About = () => {
@@ -9,15 +10,15 @@ const About = () => {
         <div className='flex-1 md:w-[525px]'>
           <h1 className='text-4xl md:text-[54px] mb-6 md:mb-8 font-semibold'>Our Story</h1>
           <p className='text-base md:text-[16px] leading-6 md:leading-[26px] mb-5'>
-            Launched in 2015, Exclusive is South Asias premier online shopping marketplace with an active presence in Bangladesh. Supported by a wide range of tailored marketing, data, and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the region.
+            Launched in 2015, Exclusive is South Asia's premier online shopping marketplace with an active presence in Bangladesh. Supported by a wide range of tailored marketing, data, and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the region.
           </p>
           <p className='text-base md:text-[16px] leading-6 md:leading-[26px]'>
-            Exclusive has more than 1 Million products to offer, growing very fast. Exclusive offers a diverse assortment in categories ranging from consumer.
+            Exclusive has more than 1 Million products to offer, growing very fast. Exclusive offers a diverse assortment in categories ranging from consumer goods to electronics.
           </p>
         </div>
         {/* right */}
         <div className='flex-1 md:w-[705px]'>
-          <img src="/about/section1.png" className="w-full h-auto" alt="About Section" />
+          <Image src="/about/section1.png" width={705} height={430} alt="About Section" /> {/* Replaced img with Image */}
         </div>
       </section>
 
@@ -32,7 +33,7 @@ const About = () => {
               <div key={index} className="border border-black py-6 px-4 flex flex-col items-center">
                 <div className="icon flex items-center justify-center w-[80px] h-[80px] bg-[#2F2E30] rounded-full">
                   <div className='w-[58px] h-[58px] bg-black rounded-full flex items-center justify-center'>
-                    <img src={item.imgSrc} className='w-[40px] h-[40px]' alt="" />
+                    <Image src={item.imgSrc} width={40} height={40} alt="" /> {/* Replaced img with Image */}
                   </div>
                 </div>
                 <h1 className='text-2xl mt-4 mb-2 font-bold'>{item.count}</h1>
@@ -49,7 +50,7 @@ const About = () => {
             .map((item, index) => (
               <div key={index} className='flex-1'>
                 <div className='bg-[#F5F5F5] h-[430px]'>
-                  <img src={item.imgSrc} className='w-full h-full object-contain' alt={item.name} />
+                  <Image src={item.imgSrc} width={705} height={430} className='w-full h-full object-contain' alt={item.name} /> {/* Replaced img with Image */}
                 </div>
                 <h1 className='text-2xl mt-5 mb-2 font-bold'>{item.name}</h1>
                 <h4 className='text-base mb-4'>{item.title}</h4>
@@ -71,7 +72,7 @@ const About = () => {
               <div key={index} className="flex-1 py-6 flex flex-col items-center text-center">
                 <div className="icon flex items-center justify-center w-[80px] h-[80px] bg-[#2F2E30] rounded-full">
                   <div className='w-[58px] h-[58px] bg-black rounded-full flex items-center justify-center'>
-                    <img src={item.iconSrc} className='w-[40px] h-[40px]' alt="" />
+                    <Image src={item.iconSrc} width={40} height={40} alt="" /> {/* Replaced img with Image */}
                   </div>
                 </div>
                 <h1 className='text-lg mt-5 mb-3 font-bold'>{item.title}</h1>
