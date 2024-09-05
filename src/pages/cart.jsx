@@ -1,16 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState,useEffect } from 'react';
+import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([]);
   const [shippingFee, setShippingFee] = useState(10); // Example shipping fee
   const router = useRouter();
-
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCartItems(storedCart);
-  }, []);
+  const { cartItems, removeFromCart } = useCart(); // Destructure `removeFromCart`
 
   const handleQuantityChange = (index, newQuantity) => {
     if (newQuantity < 1) newQuantity = 1; // Ensure quantity is at least 1
@@ -18,12 +14,17 @@ const CartPage = () => {
     const updatedCart = [...cartItems];
     updatedCart[index].quantity = newQuantity;
     updatedCart[index].totalPrice = updatedCart[index].price * newQuantity;
-    
-    setCartItems(updatedCart);
+
+    // Update cart state and local storage
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
-  const calculateSubtotal = () => cartItems.reduce((sum, item) => sum + (item.totalPrice || item.price * item.quantity), 0);
+  const calculateSubtotal = () =>
+    cartItems.reduce(
+      (sum, item) => sum + (item.totalPrice || item.price * item.quantity),
+      0
+    );
+
   const calculateTotal = () => calculateSubtotal() + shippingFee;
 
   const handleCheckout = () => {
@@ -39,7 +40,7 @@ const CartPage = () => {
         ) : (
           <div className="space-y-6">
             {cartItems.map((item, index) => (
-              <div key={index} className="flex  md:flex-row items-center justify-between p-4 border rounded">
+              <div key={index} className="flex md:flex-row items-center justify-between p-4 border rounded">
                 <img src={item.image} alt={item.title} className="w-20 h-20 object-cover" />
                 <div className="flex-1 md:ml-4 flex flex-col">
                   <h2 className="text-lg font-semibold">{item.title}</h2>
@@ -59,11 +60,7 @@ const CartPage = () => {
                 </div>
                 <button
                   className="bg-red-500 text-white px-4 py-2 rounded mt-4 md:mt-0"
-                  onClick={() => {
-                    const updatedCart = cartItems.filter((_, i) => i !== index);
-                    setCartItems(updatedCart);
-                    localStorage.setItem('cart', JSON.stringify(updatedCart));
-                  }}
+                  onClick={() => removeFromCart(index)}
                 >
                   Remove
                 </button>

@@ -6,6 +6,8 @@ import { motion } from 'framer-motion'; // Importing framer-motion for animation
 import { CiUser } from 'react-icons/ci';
 import { MdOutlineCancel } from 'react-icons/md';
 import Image from 'next/image'; // Importing Image component
+import { useCart } from '@/context/CartContext';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Navbar = () => {
   const router = useRouter();
@@ -13,6 +15,12 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const [isIconRed, setIsIconRed] = useState(false);
+  
+
+  const { cartItems } = useCart();
+
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -78,10 +86,16 @@ const Navbar = () => {
               <Image src="/navbar/icon_heart.png" width={20} height={20} alt="Wishlist Icon" />
             </div>
             <Link href="/cart">
-              <div className='w-6 h-6 cursor-pointer'>
-                <Image src="/navbar/icon_cart.png" width={24} height={24} alt="Cart Icon" />
-              </div>
-            </Link>
+        <div className='relative'>
+          <Image src="/navbar/icon_cart.png" width={24} height={24} alt="Cart Icon" />
+          {cartItemCount > 0 && (
+            <span className="absolute top-2 left-3 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+              {cartItemCount}
+            </span>
+          )}
+        </div>
+      </Link>
+
             <div
               onClick={toggleDropdown}
               className={`p-1 w-8 rounded-3xl cursor-pointer flex items-center justify-center ${isIconRed ? 'bg-[#DB4444] duration-200' : 'bg-white duration-200'}`}
@@ -164,10 +178,16 @@ const Navbar = () => {
                 <Image src="/navbar/icon_heart.png" width={20} height={20} alt="Wishlist Icon" />
               </div>
               <Link href="/cart">
-                <div className='w-6 cursor-pointer'>
-                  <Image src="/navbar/icon_cart.png" width={24} height={24} alt="Cart Icon" />
-                </div>
-              </Link>
+        <div className='relative'>
+          <Image src="/navbar/icon_cart.png" width={24} height={24} alt="Cart Icon" />
+          {cartItemCount > 0 && (
+            <span className="absolute top-2 left-3 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+              {cartItemCount}
+            </span>
+          )}
+        </div>
+      </Link>
+
               <div
                 onClick={toggleDropdown}
                 className={`p-1 w-8 rounded-3xl cursor-pointer flex items-center justify-center ${isIconRed ? 'bg-[#DB4444] duration-200' : 'bg-white duration-200'}`}
