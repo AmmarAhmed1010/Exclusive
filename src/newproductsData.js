@@ -1,6 +1,6 @@
 const newproductsData = [
   {
-    id: 1,
+    id: 0,
     image: "/newproducts/product1.png",
     title: "Breed Dry Dog Food",
     price: 40,
@@ -9,7 +9,7 @@ const newproductsData = [
     reviews: 65,
   },
   {
-    id: 2,
+    id: 1,
     image: "/newproducts/product2.png",
     title: "CANON EOS DSLR Camera",
     price: 560,
@@ -18,7 +18,7 @@ const newproductsData = [
     reviews: 589,
   },
   {
-    id: 3,
+    id: 2,
     image: "/newproducts/product3.png",
     title: "ASUS FHD Gaming Laptop",
     price: 1200,
@@ -27,7 +27,7 @@ const newproductsData = [
     reviews: 10,
   },
   {
-    id: 4,
+    id: 3,
     image: "/newproducts/product4.png",
     title: "Curology Product Set",
     price: 20,
@@ -36,7 +36,7 @@ const newproductsData = [
     reviews: 28,
   },
   {
-    id: 5,
+    id: 4,
     image: "/newproducts/product5.png",
     title: "Kids Electric Car",
     price: 80,
@@ -45,7 +45,7 @@ const newproductsData = [
     reviews: 65,
   },
   {
-    id: 6,
+    id: 5,
     image: "/newproducts/product6.png",
     title: "Soccer Cleats",
     price: 10,
@@ -54,7 +54,7 @@ const newproductsData = [
     reviews: 589,
   },
   {
-    id: 7,
+    id: 6,
     image: "/newproducts/product7.png",
     title: "GP11 Shooter USB Gamepad",
     price: 56,
@@ -63,7 +63,7 @@ const newproductsData = [
     reviews: 10,
   },
   {
-    id: 8,
+    id: 7,
     image: "/newproducts/product8.png",
     title: "Quilted Satin Jacket",
     price: 100,
