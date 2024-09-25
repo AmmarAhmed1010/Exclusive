@@ -127,26 +127,36 @@ const Index = () => {
             </div>
           </div>
           <div className='w-full h-[145px] gap-4 flex justify-between'>
+            <Link href="/category_phones" className=' flex'>
             <div className='flex flex-col lg:w-[150px] md:w-full border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaMobileAlt className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Phones</h3>
             </div>
+            </Link>
+            <Link href="/category_computers" className=' flex'>
             <div className='flex flex-col lg:w-[150px] md:w-full border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaLaptop className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Computers</h3>
             </div>
+            </Link>
+            <Link href="/category_camera" className=' flex'>
             <div className='flex flex-col lg:w-[150px] md:w-full border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaCamera className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Camera</h3>
             </div>
+            </Link>
+            <Link href="/category_headphones" className=' flex'>
             <div className='flex flex-col lg:w-[150px] md:w-full border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaHeadphones className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Headphones</h3>
             </div>
+            </Link>
+            <Link href="/category_gaming" className=' flex'>
             <div className='flex flex-col lg:w-[150px] md:w-full border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaGamepad className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Gaming</h3>
             </div>
+            </Link>
           </div>
         </section>
 
@@ -170,60 +180,61 @@ const Index = () => {
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full md:grid-cols-3 lg:grid-cols-4 gap-6'>
-              {newproductsData.map((product, index) => (
-                <ProductCard
-                  key={product.id} // Use product ID
-                  productId={product.id.toString()} // Ensure this is passed as a string
-                  image={product.image}
-                  title={product.title}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  rating={product.rating}
-                  reviews={product.reviews}
-                />
-              ))}
+              {newproductsData
+                .filter((product) => product.id >= 0 && product.id <= 3) // Filter products with IDs from 0 to 4
+                .map((product) => (
+                  <ProductCard
+                    key={product.id} // Use product ID
+                    productId={product.id.toString()} // Ensure this is passed as a string
+                    image={product.image}
+                    title={product.title}
+                    price={product.price}
+                    originalPrice={product.originalPrice}
+                    rating={product.rating}
+                    reviews={product.reviews}
+                  />
+                ))}
             </div>
-
           </div>
 
           <div className='w-full bg-black p-16 md:p-20 flex flex-col md:flex-row justify-between items-center md:items-start'>
-  {/* Left Section */}
-  <div className="left text-center md:text-left w-full md:w-1/2">
-    <h4 className='text-[#00FF66] text-lg md:text-xl mt-4 mb-4'>Categories</h4>
-    <h1 className='text-white text-[40px] md:text-[54px] font-bold leading-tight'>Enhance Your</h1>
-    <h1 className='text-white text-[40px] md:text-[54px] font-bold leading-tight mb-6 md:mb-10'>Music Experience</h1>
-    
-    {/* Countdown Timer */}
-    <div className='flex justify-center md:justify-start mb-8 md:mb-12 gap-5'>
-      <div className='w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-full flex flex-col justify-center items-center'>
-        <h3 className='font-bold text-[18px] md:text-[22px]'>{time.hours}</h3>
-        <h3 className='font-semibold text-[14px] md:text-[16px]'>Hours</h3>
-      </div>
-      <div className='w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-full flex flex-col justify-center items-center'>
-        <h3 className='font-bold text-[18px] md:text-[22px]'>{time.days}</h3>
-        <h3 className='font-semibold text-[14px] md:text-[16px]'>Days</h3>
-      </div>
-      <div className='w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-full flex flex-col justify-center items-center'>
-        <h3 className='font-bold text-[18px] md:text-[22px]'>{time.minutes}</h3>
-        <h3 className='font-semibold text-[14px] md:text-[16px]'>Minutes</h3>
-      </div>
-      <div className='w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-full flex flex-col justify-center items-center'>
-        <h3 className='font-bold text-[18px] md:text-[22px]'>{time.seconds}</h3>
-        <h3 className='font-semibold text-[14px] md:text-[16px]'>Seconds</h3>
-      </div>
-    </div>
+            {/* Left Section */}
+            <div className="left text-center md:text-left w-full md:w-1/2">
+              <h4 className='text-[#00FF66] text-lg md:text-xl mt-4 mb-4'>Categories</h4>
+              <h1 className='text-white text-[40px] md:text-[54px] font-bold leading-tight'>Enhance Your</h1>
+              <h1 className='text-white text-[40px] md:text-[54px] font-bold leading-tight mb-6 md:mb-10'>Music Experience</h1>
 
-    {/* Buy Now Button */}
-    <button className='bg-[#00FF66] px-8 py-3 md:px-10 md:py-4 rounded-lg text-white text-[16px] md:text-[18px] font-semibold transition-all hover:bg-white hover:text-[#00FF66]'>
-      Buy Now!
-    </button>
-  </div>
+              {/* Countdown Timer */}
+              <div className='flex justify-center md:justify-start mb-8 md:mb-12 gap-5'>
+                <div className='w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-full flex flex-col justify-center items-center'>
+                  <h3 className='font-bold text-[18px] md:text-[22px]'>{time.hours}</h3>
+                  <h3 className='font-semibold text-[14px] md:text-[16px]'>Hours</h3>
+                </div>
+                <div className='w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-full flex flex-col justify-center items-center'>
+                  <h3 className='font-bold text-[18px] md:text-[22px]'>{time.days}</h3>
+                  <h3 className='font-semibold text-[14px] md:text-[16px]'>Days</h3>
+                </div>
+                <div className='w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-full flex flex-col justify-center items-center'>
+                  <h3 className='font-bold text-[18px] md:text-[22px]'>{time.minutes}</h3>
+                  <h3 className='font-semibold text-[14px] md:text-[16px]'>Minutes</h3>
+                </div>
+                <div className='w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-full flex flex-col justify-center items-center'>
+                  <h3 className='font-bold text-[18px] md:text-[22px]'>{time.seconds}</h3>
+                  <h3 className='font-semibold text-[14px] md:text-[16px]'>Seconds</h3>
+                </div>
+              </div>
 
-  {/* Right Section */}
-  <div className="right w-full md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
-    <img src="/index/speaker.png" alt="Speaker" className='w-full max-w-[500px] md:max-w-[600px] h-auto' />
-  </div>
-</div>
+              {/* Buy Now Button */}
+              <button className='bg-[#00FF66] px-8 py-3 md:px-10 md:py-4 rounded-lg text-white text-[16px] md:text-[18px] font-semibold transition-all hover:bg-white hover:text-[#00FF66]'>
+                Buy Now!
+              </button>
+            </div>
+
+            {/* Right Section */}
+            <div className="right w-full md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
+              <img src="/index/speaker.png" alt="Speaker" className='w-full max-w-[500px] md:max-w-[600px] h-auto' />
+            </div>
+          </div>
 
         </section>
 
@@ -244,20 +255,21 @@ const Index = () => {
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-              {newproductsData.map((product, index) => (
-                <ProductCard
-                  key={product.id} // Use product ID
-                  productId={product.id.toString()} // Ensure this is passed as a string
-                  image={product.image}
-                  title={product.title}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  rating={product.rating}
-                  reviews={product.reviews}
-                />
-              ))}
+              {newproductsData
+                .filter((product) => product.id >= 0 && product.id <= 7) // Filter products with IDs from 0 to 4
+                .map((product) => (
+                  <ProductCard
+                    key={product.id} // Use product ID
+                    productId={product.id.toString()} // Ensure this is passed as a string
+                    image={product.image}
+                    title={product.title}
+                    price={product.price}
+                    originalPrice={product.originalPrice}
+                    rating={product.rating}
+                    reviews={product.reviews}
+                  />
+                ))}
             </div>
-
           </div>
           <div className='flex w-full justify-center items-center'>
             <button className='bg-[#DB4444]  rounded text-white '>
@@ -364,30 +376,36 @@ const Index = () => {
             </div>
           </div>
           <div className='w-full grid grid-cols-2 justify-center items-center gap-8'>
+            <Link href="/category_phones">
             <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaMobileAlt className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Phones</h3>
             </div>
+            </Link>
+            <Link href="/category_computers">
             <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaLaptop className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Computers</h3>
             </div>
+            </Link>
+            <Link href="/category_camera">
             <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaCamera className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Camera</h3>
             </div>
+            </Link>
+            <Link href="/category_headphones">
             <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaHeadphones className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Headphones</h3>
             </div>
+            </Link>
+            <Link href="/category_gaming">
             <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
               <FaGamepad className='h-[56px] w-[56px]' />
               <h3 className='text-lg font-medium'>Gaming</h3>
             </div>
-            <div className='flex flex-col py-6 border cursor-pointer border-gray-300 rounded justify-center items-center gap-3 hover:bg-[#DB4444] duration-200 hover:text-white'>
-              <FaGamepad className='h-[56px] w-[56px]' />
-              <h3 className='text-lg font-medium'>Gaming</h3>
-            </div>
+            </Link>
           </div>
         </section>
 
@@ -411,18 +429,20 @@ const Index = () => {
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full grid-cols-2 gap-6'>
-              {newproductsData.map((product, index) => (
-                <ProductCard
-                  key={product.id} // Use product ID
-                  productId={product.id.toString()} // Ensure this is passed as a string
-                  image={product.image}
-                  title={product.title}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  rating={product.rating}
-                  reviews={product.reviews}
-                />
-              ))}
+            {newproductsData
+    .filter((product) => product.id >= 0 && product.id <= 3) // Filter products with IDs from 0 to 4
+    .map((product) => (
+      <ProductCard
+        key={product.id} // Use product ID
+        productId={product.id.toString()} // Ensure this is passed as a string
+        image={product.image}
+        title={product.title}
+        price={product.price}
+        originalPrice={product.originalPrice}
+        rating={product.rating}
+        reviews={product.reviews}
+      />
+    ))}
             </div>
           </div>
           <div className='w-full bg-black p-10 flex flex-col md:flex-row justify-between'>
@@ -479,18 +499,20 @@ const Index = () => {
           <div className='w-full flex mb-20 justify-between'>
             {/* card1 */}
             <div className='grid w-full grid-cols-2 gap-6'>
-              {newproductsData.map((product) => (
-                <ProductCard
-                  key={product.id} // Use product ID
-                  productId={product.id.toString()} // Ensure this is passed as a string
-                  image={product.image}
-                  title={product.title}
-                  price={product.price}
-                  originalPrice={product.originalPrice}
-                  rating={product.rating}
-                  reviews={product.reviews}
-                />
-              ))}
+            {newproductsData
+    .filter((product) => product.id >= 0 && product.id <= 7) // Filter products with IDs from 0 to 4
+    .map((product) => (
+      <ProductCard
+        key={product.id} // Use product ID
+        productId={product.id.toString()} // Ensure this is passed as a string
+        image={product.image}
+        title={product.title}
+        price={product.price}
+        originalPrice={product.originalPrice}
+        rating={product.rating}
+        reviews={product.reviews}
+      />
+    ))}
             </div>
           </div>
           <div className='flex w-full justify-center items-center'>
