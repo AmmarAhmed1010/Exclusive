@@ -7,7 +7,6 @@ import { CiUser } from 'react-icons/ci';
 import { MdOutlineCancel } from 'react-icons/md';
 import Image from 'next/image'; // Importing Image component
 import { useCart } from '@/context/CartContext';
-import { FaShoppingCart } from 'react-icons/fa';
 
 const Navbar = () => {
   const router = useRouter();
@@ -74,7 +73,7 @@ const Navbar = () => {
 
       <nav className='w-full flex items-center justify-between border-b border-gray-300 py-6 px-4 md:px-8'>
         {/* Hamburger and Search (for mobile view) */}
-        <div className='md:hidden flex items-center justify-between w-full max-w-[500px] mx-auto'>
+        <div className='lg:hidden flex items-center justify-between w-full'>
           <div className='flex-grow flex items-center justify-start'>
             <Link href="/">
               <h1 className='font-bold text-2xl font-serif cursor-pointer'>Exclusive</h1>
@@ -95,7 +94,7 @@ const Navbar = () => {
           )}
         </div>
       </Link>
-
+      
             <div
               onClick={toggleDropdown}
               className={`p-1 w-8 rounded-3xl cursor-pointer flex items-center justify-center ${isIconRed ? 'bg-[#DB4444] duration-200' : 'bg-white duration-200'}`}
@@ -139,7 +138,7 @@ const Navbar = () => {
         </div>
 
         {/* Logo, Links, Search, and Icons (for larger screens) */}
-        <div className='hidden md:flex items-center justify-evenly w-full'>
+        <div className='hidden lg:flex items-center justify-evenly w-full'>
           <Link href="/">
             <h1 className='font-bold text-2xl font-serif cursor-pointer'>Exclusive</h1>
           </Link>
@@ -156,7 +155,7 @@ const Navbar = () => {
                 <Link href="/about">About</Link>
               </li>
               <li className={`text-[14px] md:text-[16px] pb-1 ${isActive('/signup') ? 'border-b-2 border-black' : ''}`}>
-                <Link href="/signup">Sign Up</Link>
+                <Link href="/sign_up">Sign Up</Link>
               </li>
             </ul>
 
@@ -168,7 +167,7 @@ const Navbar = () => {
                   placeholder='What are you looking for?'
                 />
                 <div className='cursor-pointer'>
-                  <Image src="/navbar/icon_search.png" width={24} height={24} alt="Search Icon" />
+                  <Image src="/navbar/icon_search.png" width={20} height={20} alt="Search Icon" />
                 </div>
               </div>
             </div>
@@ -268,7 +267,7 @@ const Navbar = () => {
                   <Link href="/about" onClick={toggleMenu}>About</Link>
                 </li>
                 <li className={`text-[20px] md:text-[16px] pb-1 ${isActive('/signup') ? 'border-b-2 border-black' : ''}`}>
-                  <Link href="/signup" onClick={toggleMenu}>Sign Up</Link>
+                  <Link href="/sign_up" onClick={toggleMenu}>Sign Up</Link>
                 </li>
               </ul>
             </div>

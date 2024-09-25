@@ -3,7 +3,7 @@ import Image from 'next/image'; // Importing Next.js Image component
 
 const Contact = () => {
   return (
-    <div className="wrapper flex flex-col lg:flex-row gap-8 w-full justify-center py-14 px-6">
+    <div className="wrapper flex flex-col lg:flex-row gap-8 w-full justify-center py-14 px-6 md:px-20">
       {/* left */}
       <div className="w-full lg:w-[340px] h-auto lg:h-[457px] flex flex-col px-8 py-8 shadow-xl">
         <div className="flex mb-5 items-center gap-4">
