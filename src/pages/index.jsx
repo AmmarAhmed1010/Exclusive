@@ -6,6 +6,7 @@ import ProductCard from '@/components/ProductCard';
 import newproductsData from '@/newproductsData';
 import Link from 'next/link';
 const Index = () => {
+  
   const [time, setTime] = useState({
     hours: 23,
     days: 5,

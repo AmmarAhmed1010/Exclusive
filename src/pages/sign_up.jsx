@@ -1,5 +1,5 @@
+import { signIn } from 'next-auth/react'; // Import signIn for GitHub authentication
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 const SignUp = () => {
@@ -17,51 +17,19 @@ const SignUp = () => {
           />
         </div>
 
-        {/* Right Form Section */}
-        <div className="right w-full md:mr-20  lg:max-w-xl flex flex-col justify-center px-6">
-          <h1 className="text-3xl font-semibold mb-4">Create an account</h1>
-          <h3 className="text-gray-600 mb-6">Enter your details below</h3>
+        {/* Right GitHub Sign-In Section */}
+        <div className="right w-full md:mr-20 lg:max-w-xl flex flex-col justify-center px-6">
+          <h1 className="text-3xl font-semibold mb-4">Sign in with GitHub</h1>
+          <p className="text-gray-600 mb-6">Use your GitHub account to sign in</p>
 
-          {/* Input Fields */}
-          <div className="flex flex-col gap-8 mb-4">
-            <input 
-              type="text" 
-              className="outline-none border-b-2 border-gray-300  py-2" 
-              placeholder="Name" 
-            />
-            <input 
-              type="email" 
-              className="outline-none border-b-2 border-gray-300  py-2" 
-              placeholder="Email or Phone Number" 
-            />
-            <input 
-              type="password" 
-              className="outline-none border-b-2 border-gray-300  transition-all py-2" 
-              placeholder="Password" 
-            />
-          </div>
-
-          {/* Sign In Button */}
-          <button className="bg-[#DB4444] text-white py-3 rounded-lg transition-all mb-4">
-            Create Account
+          {/* GitHub Sign-In Button */}
+          <button 
+            className="border border-gray-300 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition-all"
+            onClick={() => signIn('github')} // Trigger GitHub sign-in
+          >
+            <img src="/login/github-icon.png" alt="GitHub Icon" className="w-5 h-5" />
+            Sign in with GitHub
           </button>
-
-          {/* Google Sign In */}
-        
-
-          <button className="border border-gray-300 font-semibold py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition-all">
-            <img src="/login/Icon-Google.png" alt="Google Icon" className="w-5 h-5" />
-            Sign in with Google
-          </button>
-    
-
-          {/* Already have an account */}
-          <p className="text-gray-600 mt-4 text-center">
-            Already have an account?{' '}
-            <Link href="/sign_in" className="font-semibold hover:underline">
-              Sign in
-            </Link>
-          </p>
         </div>
       </div>
     </div>
