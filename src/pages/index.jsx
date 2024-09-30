@@ -101,7 +101,7 @@ const Index = () => {
                   <h1 className='md:text-3xl lg:text-5xl font-bold mb-2'>Up to 10%</h1>
                   <h1 className='md:text-3xl lg:text-5xl font-bold'>off Voucher</h1>
                   <div className='flex items-center gap-4 mt-4 cursor-pointer'>
-                    <h3 className='underline text-sm md:text-base'>Shop Now</h3>
+                    <Link href="product/16" className='underline text-sm md:text-base'>Shop Now</Link>
                     <img src="/index/icon-arrow-right.png" className='w-6' alt="Arrow Icon" />
                   </div>
                 </div>
@@ -351,7 +351,7 @@ const Index = () => {
                   <h1 className='text-2xl font-bold'>Up to 10%</h1>
                   <h1 className='text-2xl font-bold'>off Voucher</h1>
                   <div className='flex gap-4 cursor-pointer'>
-                    <h3 className='underline text-sm'>Shop Now</h3>
+                    <Link href="product/16" className='underline text-sm'>Shop Now</Link>
                     <img src="/index/icon-arrow-right.png" className='w-6' alt="" />
                   </div>
                 </div>
