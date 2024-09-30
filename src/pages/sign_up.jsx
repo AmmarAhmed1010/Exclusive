@@ -16,7 +16,7 @@ const SignUp = () => {
         toast.success(`Welcome, ${session.user.name}!`, { position: 'top-center' }); // Show toast message
         toastShown.current = true; // Set ref to true to indicate the toast has been shown
       }
-      router.push('/'); // Redirect to the home page if signed in
+       // Redirect to the home page if signed in
     } else {
       toastShown.current = false; // Reset ref if user is not signed in
     }
