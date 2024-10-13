@@ -76,7 +76,7 @@ const ProductDetailPage = () => {
 
         {/* Second Column: Main large image */}
         <div className="w-full lg:w-2/4 flex justify-center items-center">
-          <div className="w-full h-full max-w-md px-2 sm:px-6 bg-[#F5F5F5]">
+          <div className="w-full md:h-full h-[200px] max-w-md px-2 sm:px-6 bg-[#F5F5F5]">
             <img
               src={product.image}
               alt={product.title}
@@ -86,7 +86,7 @@ const ProductDetailPage = () => {
         </div>
 
         {/* Third Column: Product details */}
-        <div className="w-full lg:w-2/4 flex flex-col gap-4">
+        <div className="w-full lg:w-2/4 flex flex-col gap-1">
           <h1 className="text-xl sm:text-2xl font-bold">{product.title}</h1>
           <div className="flex gap-2 sm:gap-4">
             <h3 className="text-xl sm:text-2xl text-red-500">${product.price}</h3>
@@ -109,14 +109,14 @@ const ProductDetailPage = () => {
               ({product.reviews} reviews)
             </span>
           </div>
-          <p className="mt-4 text-sm sm:text-base">
+          <p className="mt-1 text-sm sm:text-base">
             This is a brief description of the product.
           </p>
 
           {/* Add to Cart button */}
           <button
             onClick={handleAddToCart}
-            className="mt-6 bg-red-500 text-white py-2 px-3 sm:py-2 sm:px-4 rounded hover:bg-red-600"
+            className="mt-1 bg-red-500 text-white py-2 px-3 sm:py-2 sm:px-4 rounded hover:bg-red-600"
           >
             Add to Cart
           </button>

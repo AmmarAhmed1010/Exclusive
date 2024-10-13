@@ -305,43 +305,9 @@ const Index = () => {
       {/* Mobile View */}
       <div className='md:hidden'>
         {/* section1 */}
-        <section className='flex px-6 w-full'>
+        <section className='flex pt-10 px-6 w-full'>
           <div className="wrapper flex-col flex">
-
-
-            {/* categories */}
-            <div className="dropdown-container relative mt-6 w-full">
-              <div
-                className="flex justify-between items-center w-full cursor-pointer bg-white border border-gray-300 p-4 rounded-md"
-                onClick={toggleDropdown}
-              >
-                <h3 className='text-[16px] leading-6'>Categories</h3>
-                <FaChevronRight
-                  className={`w-5 h-5 transform duration-300 ${isOpen ? 'rotate-90' : ''}`}
-                />
-              </div>
-
-              {/* Dropdown Menu */}
-              <div className={`absolute left-0 mt-2 w-full bg-white border border-gray-300 rounded-md shadow-md transition-all duration-300 ease-in-out origin-top ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'} transform`}>
-                <div className="flex flex-col p-4">
-                  <div className='flex justify-between cursor-pointer'>
-                    <h3 className='text-[16px] leading-6'>Womans Fashion</h3>
-                  </div>
-                  <div className='flex justify-between cursor-pointer'>
-                    <h3 className='text-[16px] leading-6'>Mens Fashion</h3>
-                  </div>
-                  <h3 className='text-[16px] leading-6 cursor-pointer'>Electronics</h3>
-                  <h3 className='text-[16px] leading-6 cursor-pointer'>Home & Lifestyle</h3>
-                  <h3 className='text-[16px] leading-6 cursor-pointer'>Medicine</h3>
-                  <h3 className='text-[16px] leading-6 cursor-pointer'>Sports & Outdoor</h3>
-                  <h3 className='text-[16px] leading-6 cursor-pointer'>Babys & Toys</h3>
-                  <h3 className='text-[16px] leading-6 cursor-pointer'>Groceries & Pets</h3>
-                  <h3 className='text-[16px] leading-6 cursor-pointer'>Health & Beauty</h3>
-                </div>
-              </div>
-            </div>
-            {/* categories closes */}
-            <div className="right pt-10 w-full">
+            <div className="right w-full">
               <div className='bg-black flex-col py-8 flex w-full h-full justify-between'>
                 <div className="left flex flex-col justify-center px-16 h-full  w-full text-white">
                   <div className='flex items-center justify-start gap-4'>
